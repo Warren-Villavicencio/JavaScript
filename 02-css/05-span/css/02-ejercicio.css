@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 768px) {
-    contenedor {
+    .contenedor {
         width: 100%;
     }
 }
