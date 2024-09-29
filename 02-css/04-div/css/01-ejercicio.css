@@ -1,0 +1,16 @@
+/* Estilos CSS */
+.container {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      display: flex;
+    }
+    .left {
+      width: 30%;
+    }
+    .right {
+      width: 70%;
+    }
+  }
