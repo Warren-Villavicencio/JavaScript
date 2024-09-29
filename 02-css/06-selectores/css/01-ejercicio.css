@@ -1,0 +1,12 @@
+.productos li {
+    list-style: none;
+    margin: 20px;
+  }
+  
+  .productos img {
+    width: 100px;
+  }
+  
+  .productos .precio {
+    color: green;
+  }
