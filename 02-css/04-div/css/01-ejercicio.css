@@ -4,12 +4,17 @@
   }
 
   .card {
-    background-color: rgb(214, 72, 72);
+    background-color: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-  
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
   @media (min-width: 768px) {
     .container {
       display: flex;
