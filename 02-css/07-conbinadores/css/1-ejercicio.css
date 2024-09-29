@@ -1,0 +1,11 @@
+.container p {
+    margin-bottom: 10px;
+  }
+  
+  h2 + p {
+    color: green;
+  }
+  
+  .nested p {
+    background-color: lightgray;
+  }
