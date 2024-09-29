@@ -1,0 +1,28 @@
+/* Estilos generales para la sección de FAQs */
+.faqs {
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  /* Estilos para los títulos de las FAQs */
+  .faqs > h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para los párrafos de las FAQs */
+  .faqs > div > p {
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Estilos para las listas dentro de las FAQs */
+  .faqs > div > ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .faqs > div > ul > li {
+    margin-bottom: 5px;
+  }
