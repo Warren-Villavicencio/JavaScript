@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <!-- Título de la página -->
+    <h1>Ingresa tu nombre</h1>
+
+    <!-- Formulario para ingresar el nombre -->
+    <form>
+        <!-- Etiqueta para el campo de nombre -->
+        <label for="nombre">Nombre:</label>
+        <!-- Campo de entrada para el nombre -->
+        <input type="text" id="nombre" name="nombre">
+        <!-- Botón para enviar el formulario -->
+        <input type="submit" value="Ingresar">
+    </form>
+
+    <!-- Sección para mostrar la respuesta -->
+    <div id="respuesta"></div>
+
+    <!-- Script para manejar la lógica del formulario -->
+    <script>
+        // Selecciona el formulario y el div de respuesta
+        const form = document.querySelector('form');
+        const respuestaDiv = document.getElementById('respuesta');
+
+        // Añade un evento al formulario para manejar el envío
+        form.addEventListener('submit', function(event) {
+            // Previene el comportamiento por defecto del formulario
+            event.preventDefault();
+            // Obtiene el valor del campo de nombre
+            const nombre = document.getElementById('nombre').value;
+            // Muestra el nombre en el div de respuesta
+            respuestaDiv.textContent = 'Hola, ' + nombre + '!';
+        });
+    </script>
+</body>
+</html>
