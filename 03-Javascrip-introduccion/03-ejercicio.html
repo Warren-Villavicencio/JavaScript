@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuadro Genealógico</title>
+    <!-- El título del documento que aparecerá en la pestaña del navegador -->
+    <style>
+        /* Estilos CSS para el formulario y el mensaje */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .mensaje {
+            color: brown;
+            font-style: italic;
+            font-size: large;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingresa tu cuadro genealógico</h1>
+    <!-- Encabezado principal de la página -->
+
+    <form>
+        <!-- Formulario para ingresar el cuadro genealógico -->
+        <label for="mama">Mamá:</label>
+        <input type="text" id="mama" name="mama" placeholder="Nombre de tu mamá">
+        <!-- Campo de texto donde el usuario ingresa el nombre de su mamá -->
+        <label for="papa">Papá:</label>
+        <input type="text" id="papa" name="papa" placeholder="Nombre de tu papá">
+        <!-- Campo de texto donde el usuario ingresa el nombre de su papá -->
+        <button type="button" onclick="mostrarGenealogia()">Mostrar Cuadro Genealógico</button>
+        <!-- Botón que al hacer clic ejecuta la función JavaScript 'mostrarGenealogia' -->
+    </form>
+
+    <p id="mensaje" class="mensaje"></p>
+    <!-- Párrafo donde se mostrará el cuadro genealógico con la clase 'mensaje' para aplicar el CSS -->
+
+    <script>
+        // Función JavaScript que se ejecuta cuando se hace clic en el botón
+        function mostrarGenealogia() {
+            var mama = document.getElementById("mama").value;
+            // Obtiene el valor ingresado en el campo de texto con id 'mama'
+            var papa = document.getElementById("papa").value;
+            // Obtiene el valor ingresado en el campo de texto con id 'papa'
+            document.getElementById("mensaje").innerText = "Tu cuadro genealógico: Mamá - " + mama + ", Papá - " + papa;
+            // Muestra el cuadro genealógico en el párrafo con id 'mensaje'
+        }
+    </script>
+</body>
+</html>
