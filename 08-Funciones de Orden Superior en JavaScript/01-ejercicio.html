@@ -8,7 +8,19 @@
 <body>
     <script>
 
-        
+function crearMultiplicador(factor) {
+  // Retorna una nueva función que multiplica un número por el factor dado
+  return function(numero) {
+    return numero * factor;
+  };
+}
+
+// Creando funciones para duplicar y triplicar
+const duplicar = crearMultiplicador(2);
+const triplicar = crearMultiplicador(3);
+
+console.log(duplicar(5)); // 10
+console.log(triplicar(5)); // 15
     </script>
 </body>
 </html>
