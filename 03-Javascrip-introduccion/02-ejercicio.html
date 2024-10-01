@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio</title>
+    <!-- El título del documento que aparecerá en la pestaña del navegador -->
+</head>
+<body>
+    <h1>Ingresa tu nombre</h1>
+    <!-- Encabezado principal de la página -->
+
+    <form>
+        <!-- Formulario para ingresar el nombre -->
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+        <!-- Campo de texto donde el usuario ingresa su nombre -->
+        <button type="button" onclick="saludar()">Saludar</button>
+        <!-- Botón que al hacer clic ejecuta la función JavaScript 'saludar' -->
+    </form>
+
+    <p id="mensaje"></p>
+    <!-- Párrafo donde se mostrará el mensaje de saludo -->
+
+    <script>
+        // Función JavaScript que se ejecuta cuando se hace clic en el botón
+        function saludar() {
+            var nombre = document.getElementById("nombre").value;
+            // Obtiene el valor ingresado en el campo de texto con id 'nombre'
+            document.getElementById("mensaje").innerText = "Hola, " + nombre + "!";
+            // Muestra el mensaje de saludo en el párrafo con id 'mensaje'
+        }
+    </script>
+</body>
+</html>
