@@ -6,7 +6,7 @@ body {
 }
 h1 {
     color: #333;
-    align-content: ;
+    align-content: center;
 }
 form {
     background: #fff;
@@ -44,5 +44,4 @@ button:hover {
     font-style: italic;
     font-size: large;
     margin-top: 20px;
-    text-align: center;
-}
+    text-align: cent
