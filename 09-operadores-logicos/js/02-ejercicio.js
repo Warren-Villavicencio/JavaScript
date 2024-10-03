@@ -1,4 +1,4 @@
-
+function validar_clima () {
 
         let esDia = document.getElementById("esDia").value.toLowerCase() === "si"; // Convertir a minúsculas y comparar con "sí";
         let estaLloviendo = document.getElementById("estaLloviendo").value.toLowerCase() === "si"; // Convertir a minúsculas y comparar con "sí";
