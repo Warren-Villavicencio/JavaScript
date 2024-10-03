@@ -4,6 +4,6 @@ function validar_conexion () {
 let estaConectado = confirm("¿Estás conectado a internet?");
 
 if (!estaConectado) {
-    alert("Debes conectarte a internet");
+    resultado.textContent = ("Debes conectarte a internet");
 }
 }
