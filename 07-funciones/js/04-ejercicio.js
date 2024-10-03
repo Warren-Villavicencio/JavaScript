@@ -1,4 +1,4 @@
-let numero_aleatorio = document.getElementById("numero");
+let mostar_resulatdo = document.getElementById("numero");
 
 function numero_aleatorio () {
 
