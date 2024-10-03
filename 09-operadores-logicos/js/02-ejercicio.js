@@ -7,5 +7,5 @@ function validar_clima () {
             alert("Podemos salir a caminar");
         }
 
-       
+    
     }
