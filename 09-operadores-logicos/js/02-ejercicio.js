@@ -12,3 +12,5 @@ function validar_clima () {
         if (!estaConectado) {
             alert("Debes conectarte a internet");
         }
+
+        
