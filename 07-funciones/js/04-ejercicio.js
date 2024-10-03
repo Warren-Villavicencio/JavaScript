@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let numero_aleatorio = document.getElementById("mostrar_resultado");
 
     // Define la función mostrar_numero_aleatorio
-    // Esta función genera un número aleatorio y lo muestra en el elemento numero_aleatorio
+    // Esta función genera un número aleatorio entre 1 y 11 y lo muestra en el elemento numero_aleatorio
     function mostrar_numero_aleatorio() {
-        
         numero_aleatorio.textContent = Math.ceil(Math.random() * 11);
     }
 
