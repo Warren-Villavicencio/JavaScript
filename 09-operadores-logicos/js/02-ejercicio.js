@@ -13,4 +13,4 @@ function validar_clima () {
             alert("Debes conectarte a internet");
         }
 
-        
+    }
