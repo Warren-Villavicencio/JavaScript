@@ -1,1 +1,4 @@
-function numero_aleatorio () 
+function numero_aleatorio () {
+
+    
+}
