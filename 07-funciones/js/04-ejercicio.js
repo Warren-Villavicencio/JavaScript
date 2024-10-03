@@ -1,5 +1,5 @@
 function numero_aleatorio () {
 
-    let 
+    let numero
 
 }
