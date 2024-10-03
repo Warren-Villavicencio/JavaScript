@@ -1,6 +1,6 @@
 function calcular_circunferencia (diametro) {
     
-return ma(Math.PI * diametro)
+return Math(Math.PI * diametro)
 
 }
 
