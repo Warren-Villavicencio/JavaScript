@@ -3,5 +3,5 @@ let edad = document.getElementById("edad");
 let mensaje = edad >= 18 ? (edad >= 65 ? "Jubilado" : "Adulto") : "Menor de edad";
 
 mensaje.textConten = 
-console.log(mensaje); // Output: "Adulto"
+
 }
