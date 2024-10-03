@@ -1,5 +1,5 @@
 
-
+funion
 let estaConectado = confirm("¿Estás conectado a internet?");
 
 if (!estaConectado) {
