@@ -1,1 +1,1 @@
-function numer
+function numero_aleatorio
