@@ -7,7 +7,7 @@
 function validar_clima () {
         if (esDia || !estaLloviendo) {
             
-            resultado.textContent =t("Podemos salir a caminar");
+            resultado.textContent =("Podemos salir a caminar");
         }
 
 
