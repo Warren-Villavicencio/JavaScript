@@ -1,5 +1,5 @@
 
-function v
+function validar_
 
 let estaConectado = confirm("¿Estás conectado a internet?");
 
