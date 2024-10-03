@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Esta función genera un número aleatorio y lo muestra en el elemento numero_aleatorio
     function mostrar_numero_aleatorio() {
         
-        numero_aleatorio.textContent = Math.l(Math.random());
+        numero_aleatorio.textContent = Math.(Math.random());
     }
 
     // Asigna la función mostrar_numero_aleatorio al evento onclick del botón
