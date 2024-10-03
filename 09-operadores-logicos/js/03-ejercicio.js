@@ -1,5 +1,5 @@
 
-function veri
+function 
 
 let estaConectado = confirm("¿Estás conectado a internet?");
 
