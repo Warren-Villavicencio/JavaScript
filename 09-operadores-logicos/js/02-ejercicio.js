@@ -1,6 +1,6 @@
 
 
-        let esDia = confirm("¿Es de día?");
+        let esDia = ;
         let estaLloviendo = confirm("¿Está lloviendo?");
 function validar_clima () {
         if (esDia || !estaLloviendo) {
