@@ -1,5 +1,5 @@
 function numero_aleatorio () {
 
-    let numero_aleatorio = document.getElementById("numero")
+    let numero_aleatorio = document.getElementById("numero");
 
 }
