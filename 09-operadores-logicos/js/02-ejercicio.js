@@ -2,7 +2,7 @@
 
         let esDia = confirm("¿Es de día?");
         let estaLloviendo = confirm("¿Está lloviendo?");
-function
+function validar
         if (esDia || !estaLloviendo) {
             alert("Podemos salir a caminar");
         }
