@@ -12,4 +12,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Asigna la función mostrar_numero_aleatorio al evento onclick del botón
     document.querySelector("button").onclick = mostrar_numero_aleatorio;
-});
+});
