@@ -1,6 +1,6 @@
 
 
-        let esDia = document.gey;
+        let esDia = document.getElementById;
         let estaLloviendo = confirm("¿Está lloviendo?");
 function validar_clima () {
         if (esDia || !estaLloviendo) {
