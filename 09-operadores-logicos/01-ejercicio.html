@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ingresa tu edad</p> <input type="number" id="edad"> <p>Tienes licencia para conducir (sí/no)</p> <input type="text" id="tieneLicencia"> <button id="validar_ingreso" onclick="validar_ingreso()">Comprobar</button> <div id="resultado_mensaje"></div> <script>
+        function validar_ingreso() {
+            // Obtener los valores ingresados por el usuario
+            let edad = document.getElementById("edad").value; // Obtiene el valor numérico ingresado en el campo "edad" y lo almacena en la variable "edad"
+            let tieneLicencia = document.getElementById("tieneLicencia").value.toLowerCase() === "sí"; // Obtiene el valor ingresado en el campo "tieneLicencia", lo convierte a minúsculas y compara si es igual a "sí". El resultado (true o false) se almacena en la variable "tieneLicencia"
+            let resultado = document.getElementById("resultado_mensaje"); // Obtiene el elemento donde se mostrará el resultado y lo almacena en la variable "resultado"
+
+            // Condicional para determinar si el usuario puede conducir
+            if (edad >= 18 && tieneLicencia) { // Si la edad es mayor o igual a 18 Y tiene licencia
+                resultado.textContent = "Puedes conducir"; // Muestra el mensaje "Puedes conducir" en el div de resultado
+            } else { // Si no cumple alguna de las condiciones anteriores
+                resultado.textContent = "No puedes conducir"; // Muestra el mensaje "No puedes conducir" en el div de resultado
+            }
+        }
+    </script>
+</body>
+</html>
