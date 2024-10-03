@@ -2,7 +2,7 @@ let numero_aleatorio = document.getElementById("numero");
 
 function numero_aleatorio () {
 
-numero_aleatorio.textcontent  = Math.    
+numero_aleatorio.textcontent  = Math.r    
 
 
 
