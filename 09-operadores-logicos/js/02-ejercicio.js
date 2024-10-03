@@ -7,10 +7,5 @@ function validar_clima () {
             alert("Podemos salir a caminar");
         }
 
-        let estaConectado = confirm("¿Estás conectado a internet?");
-
-        if (!estaConectado) {
-            alert("Debes conectarte a internet");
-        }
-
+       
     }
