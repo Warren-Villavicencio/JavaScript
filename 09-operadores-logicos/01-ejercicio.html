@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
     <title>Document</title>
 </head>
 <body>
     <p>Ingresa tu edad</p>
     <input type="number" id="edad">
-    <p>Tienes licencia para conducir</p>
+    <p>Tienes licencia para conducir (sí/no)</p>
     <input type="text" id="tieneLicencia">
-    <button id="validar_ingreso()" >comprobar</button>
-    <div id="resultado_mensaje" ></div>
+    <button id="validar_ingreso" onclick="validar_ingreso()">Comprobar</button>
+    <div id="resultado_mensaje"></div>
 
     <script>
-        let edad = document.getElementById("edad");
-        let tieneLicencia = document.getElementById("edad");
-        let resultado = document.getElementById("resultado_mensaje");
-        
-function validar_ingreso() {
-        if (edad >= 18 && tieneLicencia) {
-            resultado.textContent = ("Puedes conducir");
-        } else {
-            resultado.textContent = ("No puedes conducir");
+        function validar_ingreso() {
+            // Obtener los valores de los elementos de entrada dentro de la función
+            let edad = document.getElementById("edad").value;
+            let tieneLicencia = document.getElementById("tieneLicencia").value.toLowerCase() === "sí"; // Convertir a minúsculas y comparar con "sí"
+            let resultado = document.getElementById("resultado_mensaje");
+
+            if (edad >= 18 && tieneLicencia) {
+                resultado.textContent = "Puedes conducir";
+            } else {
+                resultado.textContent = "No puedes conducir";
+            }
         }
-
-    }
-    
-
-
     </script>
 </body>
 </html>
