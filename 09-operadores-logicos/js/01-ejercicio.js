@@ -1,24 +1,21 @@
-// AND (&&)
-let edad = 25;
-let tieneLicencia = true;
+let edad = prompt("¿Cuál es tu edad?");
+        let tieneLicencia = confirm("¿Tienes licencia de conducir?");
 
-if (edad >= 18 && tieneLicencia) {
-  console.log("Puedes conducir");
-} else {
-  console.log("No puedes conducir");
-}
+        if (edad >= 18 && tieneLicencia) {
+            alert("Puedes conducir");
+        } else {
+            alert("No puedes conducir");
+        }
 
-// OR (||)
-let esDia = true;
-let estaLloviendo = false;
+        let esDia = confirm("¿Es de día?");
+        let estaLloviendo = confirm("¿Está lloviendo?");
 
-if (esDia || !estaLloviendo) {
-  console.log("Podemos salir a caminar");
-}
+        if (esDia || !estaLloviendo) {
+            alert("Podemos salir a caminar");
+        }
 
-// NOT (!)
-let estaConectado = false;
+        let estaConectado = confirm("¿Estás conectado a internet?");
 
-if (!estaConectado) {
-  console.log("Debes conectarte a internet");
-}
+        if (!estaConectado) {
+            alert("Debes conectarte a internet");
+        }
