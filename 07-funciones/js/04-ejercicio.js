@@ -1,9 +1,5 @@
-let mostar_resulatdo = document.getElementById("mostar_resulatdo");
+let numero_aleatorio = document.getElementById("mostrar_resultado");
 
-function numero_aleatorio () {
-
-    mostar_resulatdo.textContent  = Math.random;    
-
-
-
+function mostrar_numero_aleatorio() {
+    numero_aleatorio.textContent = Math.random();
 }
