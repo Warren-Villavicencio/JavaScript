@@ -1,6 +1,6 @@
 function calcular_circunferencia (diametro) {
     
-return Math.c(Math.PI * diametro)
+return Math.ceil(Math.PI * diametro)
 
 }
 
