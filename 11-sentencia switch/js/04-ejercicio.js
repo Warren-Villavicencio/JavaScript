@@ -2,7 +2,7 @@ function menu () {
 
     switch (menu)
 
-    case  cue
+    case  cuenta_ahorro
 
 
 
