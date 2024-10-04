@@ -2,7 +2,7 @@ function menu () {
 
     switch (menu)
 
-    case  
+    case  cue
 
 
 
