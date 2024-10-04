@@ -24,4 +24,4 @@ function simularClima() {
     }
   }
   
-  simularClima
+  simularClima();
