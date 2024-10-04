@@ -4,7 +4,7 @@ function menu () {
     let mostrar_resultado 
     switch (menu) {
 
-    case  "cuenta_ahorro":
+    case  "1":
 
     break;
     case  "cuenta_ahorro":
