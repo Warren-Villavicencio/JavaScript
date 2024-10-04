@@ -11,7 +11,7 @@ function menu () {
    switch (menu_cuenta_ahorro) {
 
     case  "1":
-        mostrar_resultado.innerHTML = `
+        mostrar_resultado_ahorro.innerHTML = `
         <p>Temperatura: ${temperatura} °C</p>
         <p>Humedad: ${humedad}%</p>
         <p>Probabilidad de lluvia: ${probabilidadLluvia}%</p>
