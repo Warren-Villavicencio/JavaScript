@@ -1,1 +1,1 @@
-function menu
+function menu ()
