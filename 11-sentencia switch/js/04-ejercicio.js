@@ -1,6 +1,6 @@
 function menu () {
 
-    
+let    
     let mostrar_resultado 
     switch (menu) {
 
