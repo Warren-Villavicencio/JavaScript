@@ -1,6 +1,6 @@
 function menu () {
 
-    let mostrar_resultado ?
+    let mostrar_resultado 
     switch (menu) {
 
     case  "cuenta_ahorro":
