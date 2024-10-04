@@ -8,6 +8,7 @@ function menu () {
    mostrar_resultado.textContent = ("Cuenta de ahorros");
     break;
     case  "2":
+        
     break;
 }
 
