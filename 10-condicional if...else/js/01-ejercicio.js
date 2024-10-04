@@ -15,6 +15,8 @@ function simularClima() {
 
   // Recomendaciones basadas en el clima
   if (temperatura >= 30 && humedad >= 70) {
+
+    
       console.log("¡Hace mucho calor y humedad! Usa ropa ligera y bebe mucha agua. Evita actividades al aire libre en las horas pico.");
   } else if (temperatura >= 20 && probabilidadLluvia >= 50) {
       console.log("Se esperan lluvias. Lleva un paraguas y un impermeable. Puedes aprovechar para quedarte en casa y leer un libro.");
