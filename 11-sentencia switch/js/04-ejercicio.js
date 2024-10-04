@@ -11,6 +11,8 @@ function menu () {
    switch (menu_cuenta_ahorro) {
 
     case  "1":
+
+    
         mostrar_resultado_ahorro.textContent = ("Depositar");
     break;
     case  "2":
