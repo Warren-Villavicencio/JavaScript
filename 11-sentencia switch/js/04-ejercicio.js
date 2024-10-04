@@ -20,7 +20,7 @@ function menu () {
     break;
     case  "2":
         mostrar_resultado_ahorro.innerHTML = `
-        <p>Retirar</p>
+        <p>Retirar.</p>
        
     `;
     break;
