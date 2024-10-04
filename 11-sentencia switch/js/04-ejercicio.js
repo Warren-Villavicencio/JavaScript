@@ -5,7 +5,7 @@ function menu () {
     switch (menu) {
 
     case  "1":
-   mostrar_resultado.
+   mostrar_resultado.textContent = ("Debes conectarte a internet");
     break;
     case  "2":
     break;
