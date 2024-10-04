@@ -12,7 +12,7 @@ function menu () {
    mostrar_resultado.textContent = ("Depositar");
     break;
     case  "2":
-        mostrar_resultado.textContent = ("Cuenta Corriente");
+        mostrar_resultado.textContent = ("Retirar.");
     break;
 }
 
