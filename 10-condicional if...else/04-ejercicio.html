@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor de Unidades</title>
+</head>
+<body>
+  <select id="tipoConversion">
+    <option value="temperatura">Temperatura</option>
+    <option value="distancia">Distancia</option>
+    <option value="peso">Peso</option>
+  </select>
+  <br>
+  <input type="number" id="valor">
+  <br>
+  <button onclick="convertir()">Convertir</button>
+  <p id="resultado"></p>
+
+  <script>
+    function convertir() {
+      let tipo = document.getElementById("tipoConversion").value;
+      let valor = parseFloat(document.getElementById("valor").value);
+      let resultado = document.getElementById("resultado");
+
+      if (tipo === "temperatura") {
+        // Conversión de temperatura (por ejemplo, Celsius a Fahrenheit)
+        let fahrenheit = valor * 9/5 + 32;
+        resultado.textContent = valor + " °C = " + fahrenheit.toFixed(2) + " °F";
+      } else if (tipo === "distancia") {
+        // Conversión de distancia (por ejemplo, metros a kilómetros)
+        let kilometros = valor / 1000;
+        resultado.textContent = valor + " m = " + kilometros + " km";
+      } else if (tipo === "peso") {
+        // Conversión de peso (por ejemplo, kilogramos a libras)
+        let libras = valor * 2.20462;
+        resultado.textContent = valor + " kg = " + libras.toFixed(2) + " lb";
+      } else {
+        resultado.textContent = "Tipo de conversión no válido.";
+      }
+    }
+  </script>
+</body>
+</html>
