@@ -4,7 +4,7 @@ function simularClima() {
     const humedad = Math.floor(Math.random() * 100) + 1; // Entre 1 y 100%
     const probabilidadLluvia = Math.floor(Math.random() * 100) + 1; // Entre 1 y 100%
   
-    let mostrar_resuldo = document.getElementById("")
+    let mostrar_resultado = document.getElementById("")
     console.log("Temperatura:", temperatura, "°C");
     console.log("Humedad:", humedad, "%");
     console.log("Probabilidad de lluvia:", probabilidadLluvia, "%");
