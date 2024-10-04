@@ -13,8 +13,7 @@ function menu () {
     case  "1":
         mostrar_resultado_ahorro.innerHTML = `
         <p>Depositar</p>
-        <p>Humedad: ${humedad}%</p>
-        <p>Probabilidad de lluvia: ${probabilidadLluvia}%</p>
+       
     `;
 
         mostrar_resultado_ahorro.textContent = ("Depositar");
