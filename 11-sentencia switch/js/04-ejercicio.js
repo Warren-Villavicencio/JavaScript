@@ -8,7 +8,7 @@ function menu () {
    mostrar_resultado.textContent = ("Cuenta de ahorros");
   
 
-   switch (menu_cuenta_ah) {
+   switch (menu_cuenta_ahorro) {
 
     case  "1":
    mostrar_resultado.textContent = ("Depositar");
