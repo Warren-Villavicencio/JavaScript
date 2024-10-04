@@ -7,7 +7,7 @@ function menu () {
     case  "1":
 
     break;
-    case  "cuenta_ahorro":
+    case  "2":
     break;
 }
 
