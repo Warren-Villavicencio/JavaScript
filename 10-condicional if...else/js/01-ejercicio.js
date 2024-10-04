@@ -32,7 +32,10 @@ function simularClima() {
       console.log("Se esperan lluvias. Lleva un paraguas y un impermeable. Puedes aprovechar para quedarte en casa y leer un libro.");
   } else if (temperatura >= 10 && temperatura < 20) {
 
+    mostrar_recomendaciones.innerHTML = `
+    <p>"¡Hace mucho calor y humedad! Usa ropa ligera y bebe mucha agua. Evita actividades al aire libre en las horas pico."</p>
     
+`;
 
       console.log("El clima es fresco. Usa una chaqueta ligera y disfruta de un paseo al aire libre.");
   } else {
