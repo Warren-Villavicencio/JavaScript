@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menú interactivo</title>
+</head>
+<body>
+  <select id="opcion">
+    <option value="opcion1">Opción 1</option>
+    <option value="opcion2">Opción 2</option>
+    <option value="opcion3">Opción 3</option>
+  </select>
+  <button onclick="ejecutarOpcion()">Seleccionar</button>
+
+  <script>
+    function ejecutarOpcion() {
+      let opcionSeleccionada = document.getElementById("opcion").value;
+
+      switch (opcionSeleccionada) {
+        case "opcion1":
+          alert("Has seleccionado la opción 1");
+          break;
+        case "opcion2":
+          // Realizar otra acción
+          break;
+        // ... otras opciones
+        default:
+          alert("Opción no válida");
+      }
+    }
+  </script>
+</body>
+</html>
