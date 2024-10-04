@@ -1,7 +1,7 @@
 function menu () {
 
     let  menu =  document.getElementById("menu").value;
-    let mostrar_resultado = document.getElementById.apply("mostrar_resultado");
+    let mostrar_resultado = document.getElementById("mostrar_resultado");
     switch (menu) {
 
     case  "1":
