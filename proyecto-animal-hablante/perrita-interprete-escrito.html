@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo con tu Perrita</title>
+    <!-- Importamos Tailwind CSS para estilos y Vue.js para la reactividad -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.js"></script>
+</head>
+<body>
+    <div id="app" class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="p-8">
+            <h1 class="text-2xl font-bold mb-4">Diálogo con tu Perrita</h1>
+            <!-- Botones para controlar el diálogo -->
+            <button @click="iniciarDialogo" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                Iniciar diálogo
+            </button>
+            <button @click="detenerDialogo" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Detener diálogo
+            </button>
+            <!-- Área para mostrar los mensajes del diálogo -->
+            <div class="mt-4">
+                <p v-for="mensaje in mensajes" :key="mensaje.id" :class="{'text-blue-600': mensaje.emisor === 'Humano', 'text-green-600': mensaje.emisor === 'Perrita'}">
+                    <strong>{{ mensaje.emisor }}:</strong> {{ mensaje.texto }}
+                </p>
+            </div>
+            <!-- Campo de entrada para los mensajes del usuario -->
+            <input v-model="mensajeUsuario" @keyup.enter="enviarMensaje" class="mt-4 w-full px-3 py-2 border rounded-md" placeholder="Escribe tu mensaje aquí...">
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref, reactive } = Vue;
+
+        // Servicio para manejar la lógica del diálogo
+        const DialogoService = {
+            // Simula respuestas de la perrita
+            respuestas: [
+                "¡Guau guau! (Mueve la cola felizmente)",
+                "¡Arf! (Inclina la cabeza curiosamente)",
+                "¡Woof! (Te mira con ojos tiernos)",
+                "(Se acerca y pone su pata sobre tu mano)",
+                "(Da vueltas emocionada)",
+                "(Se tumba y muestra la barriga)",
+                "¡Yip yip! (Salta de alegría)",
+                "(Te trae su juguete favorito)",
+                "(Bosteza y se acurruca a tu lado)",
+                "(Ladra suavemente y mira hacia la puerta)"
+            ],
+            
+            // Genera una respuesta aleatoria de la perrita
+            obtenerRespuestaAleatoria() {
+                const indice = Math.floor(Math.random() * this.respuestas.length);
+                return this.respuestas[indice];
+            }
+        };
+
+        const PerritaApp = {
+            setup() {
+                const estadoDialogo = ref(false);
+                const mensajes = reactive([]);
+                const mensajeUsuario = ref('');
+
+                // Inicia el diálogo
+                const iniciarDialogo = () => {
+                    if (!estadoDialogo.value) {
+                        estadoDialogo.value = true;
+                        mensajes.push({ id: Date.now(), emisor: 'Sistema', texto: 'Diálogo iniciado. ¡Tu perrita está lista para interactuar!' });
+                    }
+                };
+
+                // Detiene el diálogo
+                const detenerDialogo = () => {
+                    if (estadoDialogo.value) {
+                        estadoDialogo.value = false;
+                        mensajes.push({ id: Date.now(), emisor: 'Sistema', texto: 'Diálogo finalizado. ¡Tu perrita se va a descansar!' });
+                    }
+                };
+
+                // Procesa el mensaje del usuario y genera una respuesta de la perrita
+                const enviarMensaje = () => {
+                    if (estadoDialogo.value && mensajeUsuario.value.trim() !== '') {
+                        // Agrega el mensaje del usuario
+                        mensajes.push({ id: Date.now(), emisor: 'Humano', texto: mensajeUsuario.value });
+                        
+                        // Genera y agrega la respuesta de la perrita
+                        setTimeout(() => {
+                            const respuestaPerrita = DialogoService.obtenerRespuestaAleatoria();
+                            mensajes.push({ id: Date.now(), emisor: 'Perrita', texto: respuestaPerrita });
+                        }, 1000); // Simula un pequeño retraso en la respuesta
+
+                        // Limpia el campo de entrada
+                        mensajeUsuario.value = '';
+                    }
+                };
+
+                return {
+                    iniciarDialogo,
+                    detenerDialogo,
+                    mensajes,
+                    mensajeUsuario,
+                    enviarMensaje
+                };
+            }
+        };
+
+        // Crea y monta la aplicación Vue
+        createApp(PerritaApp).mount('#app');
+    </script>
+</body>
+</html>
