@@ -11,8 +11,12 @@ function menu () {
    switch (menu_cuenta_ahorro) {
 
     case  "1":
+        mostrar_resultado.innerHTML = `
+        <p>Temperatura: ${temperatura} °C</p>
+        <p>Humedad: ${humedad}%</p>
+        <p>Probabilidad de lluvia: ${probabilidadLluvia}%</p>
+    `;
 
-    
         mostrar_resultado_ahorro.textContent = ("Depositar");
     break;
     case  "2":
