@@ -1,6 +1,6 @@
 function menu () {
 
-    let  menu =  document.getElementById("menu").value;
+    let  numero =  document.getElementById("menu").value;
     let mostrar_resultado = document.getElementById("mostrar_resultado");
     switch (menu) {
 
