@@ -1,6 +1,6 @@
 function menu () {
 
-    sw
+    switch
 
 
 
