@@ -1,6 +1,6 @@
 function menu () {
 
-    let mo
+    let 
     switch (menu) {
 
     case  "cuenta_ahorro":
