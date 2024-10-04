@@ -8,7 +8,7 @@ function menu () {
    mostrar_resultado.textContent = ("Cuenta de ahorros");
     break;
     case  "2":
-        mostrar_resultado.textContent = ("Cuenta de ahorros");
+        mostrar_resultado.textContent = ("Cuenta Corriente");
     break;
 }
 
