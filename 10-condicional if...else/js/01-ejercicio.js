@@ -7,7 +7,7 @@ function simularClima() {
     let mostrar_resultado = document.getElementById("mostrar_resultado");
     mostrar_resultado.textContent = ("Temperatura:", temperatura, "°C");
     mostrar_resultado.textContent = ("Humedad:", humedad, "%");
-    mostrar_resultado.textContent = ("Temperatura:", temperatura, "°C");
+    mostrar_resultado.textContent = ("Probabilidad de lluvia:", probabilidadLluvia, "%");
     console.log("Temperatura:", temperatura, "°C");
     console.log("Humedad:", humedad, "%");
     console.log("Probabilidad de lluvia:", probabilidadLluvia, "%");
