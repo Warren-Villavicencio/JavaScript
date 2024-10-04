@@ -33,6 +33,7 @@ function simularClima() {
   } else if (temperatura >= 10 && temperatura < 20) {
 
     
+
       console.log("El clima es fresco. Usa una chaqueta ligera y disfruta de un paseo al aire libre.");
   } else {
       console.log("Hace frío. Abriga bien y considera actividades en interiores.");
