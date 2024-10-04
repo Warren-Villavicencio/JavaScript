@@ -6,7 +6,7 @@ function menu () {
 
     case  "1":
    mostrar_resultado.textContent = ("Cuenta de ahorros");
-   menu_cuenta_ahorro = menu
+   menu_cuenta_ahorro = document.getElementById("menu").value;
 
    switch (menu_cuenta_ahorro) {
 
