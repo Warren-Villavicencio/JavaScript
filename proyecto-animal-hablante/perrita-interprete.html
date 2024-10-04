@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intérprete de Perrita</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="p-8">
+            <h1 class="text-2xl font-bold mb-4">Intérprete de Perrita</h1>
+            <div id="acciones">
+                <label class="block mb-2">
+                    <input type="checkbox" id="agua" class="mr-2">
+                    Me va a ver
+                </label>
+                <label class="block mb-2">
+                    <input type="checkbox" id="comida" class="mr-2">
+                    Toca el plato de comida
+                </label>
+                <label class="block mb-2">
+                    <input type="checkbox" id="pasear" class="mr-2">
+                    Me va a buscar (para pasear)
+                </label>
+                <label class="block mb-2">
+                    <input type="checkbox" id="alerta" class="mr-2">
+                    Me va a buscar (por algo extraordinario)
+                </label>
+            </div>
+            <button id="interpretar" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Interpretar</button>
+            <p id="resultado" class="mt-4 text-lg font-semibold"></p>
+        </div>
+    </div>
+
+    <script>
+        const acciones = {
+            agua: "Me va a ver cuando quiere agua",
+            comida: "Toca el plato de comida cuando quiere comer",
+            pasear: "Me va a buscar cuando quiere que la saquen a pasear",
+            alerta: "Me va a buscar cuando ha escuchado algo extraordinario o hay un ratón cerca"
+        };
+
+        const interpretarAcciones = () => {
+            const accionesRealizadas = Object.keys(acciones).filter(accion => document.getElementById(accion).checked);
+            const accionesPendientes = Object.keys(acciones).filter(accion => !accionesRealizadas.includes(accion));
+
+            if (accionesPendientes.length === 1) {
+                const accionPredecida = accionesPendientes[0];
+                const mensaje = `Creo que tu perrita quiere ${accionPredecida === 'agua' ? 'agua' : 
+                                 accionPredecida === 'comida' ? 'comer' : 
+                                 accionPredecida === 'pasear' ? 'salir a pasear' : 
+                                 'alertarte de algo'}`;
+                document.getElementById('resultado').textContent = mensaje;
+                hablar(mensaje);
+            } else if (accionesPendientes.length === 0) {
+                const mensaje = "Tu perrita parece estar satisfecha por ahora.";
+                document.getElementById('resultado').textContent = mensaje;
+                hablar(mensaje);
+            } else {
+                const mensaje = "No puedo predecir con certeza. Por favor, marca más acciones realizadas.";
+                document.getElementById('resultado').textContent = mensaje;
+                hablar(mensaje);
+            }
+        };
+
+        const hablar = (texto) => {
+            const utterance = new SpeechSynthesisUtterance(texto);
+            utterance.lang = 'es-ES';
+            speechSynthesis.speak(utterance);
+        };
+
+        document.getElementById('interpretar').addEventListener('click', interpretarAcciones);
+    </script>
+</body>
+</html>
