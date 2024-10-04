@@ -18,8 +18,7 @@ function simularClima() {
 
     mostrar_recomendaciones.innerHTML = `
     <p>"¡Hace mucho calor y humedad! Usa ropa ligera y bebe mucha agua. Evita actividades al aire libre en las horas pico."</p>
-    <p>Humedad: ${humedad}%</p>
-    <p>Probabilidad de lluvia: ${probabilidadLluvia}%</p>
+    
 `;
       console.log("¡Hace mucho calor y humedad! Usa ropa ligera y bebe mucha agua. Evita actividades al aire libre en las horas pico.");
   } else if (temperatura >= 20 && probabilidadLluvia >= 50) {
