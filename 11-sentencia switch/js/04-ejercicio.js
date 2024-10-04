@@ -16,7 +16,7 @@ function menu () {
        
     `;
 
-        mostrar_resultado_ahorro.textContent = ("Depositar");
+    
     break;
     case  "2":
         mostrar_resultado_ahorro.textContent = ("Retirar.");
