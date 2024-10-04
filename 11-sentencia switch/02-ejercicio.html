@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora simple con switch</title>
+</head>
+<body>
+  <script>
+    let operacion = "+";
+    let num1 = 5;
+    let num2 = 3;
+    let resultado;
+
+    switch (operacion) {
+      case "+":
+        resultado = num1 + num2;
+        break;
+      case "-":
+        resultado = num1 - num2;
+        break;
+      // ... otros operadores
+      default:
+        console.log("Operación no válida");
+    }
+
+    console.log("Resultado:", resultado);
+  </script>
+</body>
+</html>
