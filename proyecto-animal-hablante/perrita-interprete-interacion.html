@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo con tu Perrita</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="p-8">
+            <h1 class="text-2xl font-bold mb-4">Diálogo con tu Perrita</h1>
+            <button id="startButton" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Iniciar diálogo</button>
+            <button id="stopButton" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 ml-2" style="display:none;">Detener diálogo</button>
+            <p id="status" class="mt-4 text-lg"></p>
+            <p id="resultado" class="mt-4 text-lg font-semibold"></p>
+        </div>
+    </div>
+
+    <script>
+        // Definimos las acciones de la perrita
+        const acciones = {
+            agua: "quiere agua",
+            comida: "quiere comer",
+            pasear: "quiere salir a pasear",
+            alerta: "quiere alertarte de algo"
+        };
+
+        // Variables para el reconocimiento de voz y síntesis de voz
+        let recognition;
+        let speechSynthesis = window.speechSynthesis;
+        let isListening = false;
+
+        // Función para iniciar el reconocimiento de voz
+        function startRecognition() {
+            recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'es-ES';
+            recognition.continuous = true;
+            recognition.interimResults = false;
+
+            recognition.onresult = function(event) {
+                const last = event.results.length - 1;
+                const command = event.results[last][0].transcript.toLowerCase();
+                document.getElementById('status').textContent = 'Comando reconocido: ' + command;
+                processCommand(command);
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Error en el reconocimiento de voz:', event.error);
+            };
+
+            recognition.start();
+            isListening = true;
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('stopButton').style.display = 'inline-block';
+            document.getElementById('status').textContent = 'Escuchando...';
+        }
+
+        // Función para detener el reconocimiento de voz
+        function stopRecognition() {
+            if (recognition) {
+                recognition.stop();
+                isListening = false;
+                document.getElementById('startButton').style.display = 'inline-block';
+                document.getElementById('stopButton').style.display = 'none';
+                document.getElementById('status').textContent = 'Reconocimiento de voz detenido';
+            }
+        }
+
+        // Función para procesar el comando de voz
+        function processCommand(command) {
+            let response = "";
+            if (command.includes("qué quieres") || command.includes("que quieres")) {
+                response = predecirAccion();
+            } else if (command.includes("hola") || command.includes("hey")) {
+                response = "¡Guau guau! Hola, ¿cómo estás?";
+            } else if (command.includes("adiós") || command.includes("chao")) {
+                response = "¡Guau! Hasta luego, que tengas un buen día.";
+            } else {
+                response = "No entiendo ese comando. Prueba preguntándome qué quiero.";
+            }
+            speak(response);
+        }
+
+        // Función para predecir la acción de la perrita
+        function predecirAccion() {
+            const accionesPosibles = Object.keys(acciones);
+            const accionAleatoria = accionesPosibles[Math.floor(Math.random() * accionesPosibles.length)];
+            return `¡Guau guau! ${acciones[accionAleatoria]}.`;
+        }
+
+        // Función para hacer hablar a la aplicación
+        function speak(text) {
+            if (speechSynthesis.speaking) {
+                console.error('Aún hablando...');
+                return;
+            }
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'es-ES';
+            speechSynthesis.speak(utterance);
+            document.getElementById('resultado').textContent = text;
+        }
+
+        // Event listeners para los botones
+        document.getElementById('startButton').addEventListener('click', startRecognition);
+        document.getElementById('stopButton').addEventListener('click', stopRecognition);
+    </script>
+</body>
+</html>
