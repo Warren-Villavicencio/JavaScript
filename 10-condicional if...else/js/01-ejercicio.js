@@ -25,7 +25,7 @@ function simularClima() {
 
 
     mostrar_recomendaciones.innerHTML = `
-    <p>"¡Hace mucho calor y humedad! Usa ropa ligera y bebe mucha agua. Evita actividades al aire libre en las horas pico."</p>
+    <p>"Se esperan lluvias. Lleva un paraguas y un impermeable. Puedes aprovechar para quedarte en casa y leer un libro."</p>
     
 `;
 
