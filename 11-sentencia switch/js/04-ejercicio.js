@@ -5,7 +5,7 @@ function menu () {
     switch (menu) {
 
     case  "1":
-   mostrar_resultado.T
+   mostrar_resultado.
     break;
     case  "2":
     break;
