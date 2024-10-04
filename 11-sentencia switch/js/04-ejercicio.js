@@ -1,7 +1,7 @@
 function menu () {
 
     let  numero =  document.getElementById("menu").value;
-    
+    let menu 
     let mostrar_resultado = document.getElementById("mostrar_resultado");
     switch (menu) {
 
