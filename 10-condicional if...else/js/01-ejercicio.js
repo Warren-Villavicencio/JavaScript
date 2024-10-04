@@ -16,7 +16,7 @@ function simularClima() {
   // Recomendaciones basadas en el clima
   if (temperatura >= 30 && humedad >= 70) {
 
-    mostrar_res.innerHTML = `
+    mostrar_reco.innerHTML = `
     <p>Temperatura: ${temperatura} °C</p>
     <p>Humedad: ${humedad}%</p>
     <p>Probabilidad de lluvia: ${probabilidadLluvia}%</p>
