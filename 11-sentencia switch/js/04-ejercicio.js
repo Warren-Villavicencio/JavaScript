@@ -1,6 +1,6 @@
 function menu () {
 
-    let  menu =  document
+    let  menu =  document.get
     let mostrar_resultado 
     switch (menu) {
 
