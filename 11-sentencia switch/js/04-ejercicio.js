@@ -1,7 +1,7 @@
 function menu () {
 
     let  menu =  document.getElementById("menu").value;
-    let mostrar_resultado = ducum
+    let mostrar_resultado = document
     switch (menu) {
 
     case  "1":
