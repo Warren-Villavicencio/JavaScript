@@ -41,7 +41,7 @@ function simularClima() {
   } else {
 
     mostrar_recomendaciones.innerHTML = `
-    <p>"¡Hace mucho calor y humedad! Usa ropa ligera y bebe mucha agua. Evita actividades al aire libre en las horas pico."</p>
+    <p>"Hace frío. Abriga bien y considera actividades en interiores."</p>
     
 `;
       console.log("Hace frío. Abriga bien y considera actividades en interiores.");
