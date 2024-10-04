@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo con tu Perrita</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.js"></script>
+</head>
+<body>
+    <div id="app" class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="p-8">
+            <h1 class="text-2xl font-bold mb-4">Diálogo con tu Perrita</h1>
+            <button @click="iniciarDialogo" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                Iniciar diálogo
+            </button>
+            <button @click="detenerDialogo" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Detener diálogo
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;
+
+        const DialogoService = {
+            iniciar() {
+                console.log('Diálogo iniciado');
+                // Aquí iría la lógica para iniciar el diálogo
+            },
+            detener() {
+                console.log('Diálogo detenido');
+                // Aquí iría la lógica para detener el diálogo
+            }
+        };
+
+        const PerritaApp = {
+            setup() {
+                const estadoDialogo = ref(false);
+
+                const iniciarDialogo = () => {
+                    if (!estadoDialogo.value) {
+                        DialogoService.iniciar();
+                        estadoDialogo.value = true;
+                    }
+                };
+
+                const detenerDialogo = () => {
+                    if (estadoDialogo.value) {
+                        DialogoService.detener();
+                        estadoDialogo.value = false;
+                    }
+                };
+
+                return {
+                    iniciarDialogo,
+                    detenerDialogo
+                };
+            }
+        };
+
+        createApp(PerritaApp).mount('#app');
+    </script>
+</body>
+</html>
