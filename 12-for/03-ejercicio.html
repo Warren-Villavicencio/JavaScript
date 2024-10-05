@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario dinámico</title>
+</head>
+<body>
+    <form id="miFormulario"></form>
+    <script>
+        const formulario = document.getElementById('miFormulario');
+        const preguntas = ['Nombre', 'Apellido', 'Edad'];
+
+        for (let i = 0; i < preguntas.length; i++) {
+            const label = document.createElement('label');
+            label.textContent = preguntas[i] + ': ';
+            const input = document.createElement('input');
+            formulario.appendChild(label);
+            formulario.appendChild(input);
+            formulario.appendChild(document.createElement('br'));
+        }
+    </script>
+</body>
+</html>
