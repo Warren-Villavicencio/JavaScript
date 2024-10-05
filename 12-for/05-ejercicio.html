@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
 
-    <h1 id="mostrar_resultado" ></h1>
+  <h1 id="mostrar_resultado"></h1>
 
-    <script>
-for (x= 0; x<=100; x++ ){
-    mostrar_resultado.textContent = ("hola mundo")
+  <script>
+  let mostrarResultado = document.getElementById("mostrar_resultado");
+  let texto = "";
 
-}
+  for (let x = 0; x < 100; x++) {
+    texto += "hola mundo ";
+  }
 
-
-    </script>
+  mostrarResultado.textContent = texto;
+  </script>
 </body>
 </html>
