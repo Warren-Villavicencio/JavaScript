@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla dinámica</title>
+</head>
+<body>
+    <table id="miTabla"></table>
+    <script>
+        const tabla = document.getElementById('miTabla');
+        const datos = [
+            ['Nombre', 'Apellido', 'Edad'],
+            ['Juan', 'Pérez', 30],
+            ['María', 'Gómez', 25],
+            ['Pedro', 'López', 32]
+        ];
+
+        for (let i = 0; i < datos.length; i++) {
+            const fila = tabla.insertRow();
+            for (let j = 0; j < datos[i].length; j++) {
+                const celda = fila.insertCell();
+                celda.textContent = datos[i][j];
+            }
+        }
+    </script>
+</body>
+</html>
