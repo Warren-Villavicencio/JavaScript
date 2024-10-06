@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de do while</title>
+</head>
+<body>
+    <h1>Contador con do while</h1>
+    <button onclick="contar()">Iniciar Contador</button>
+    <p id="resultado"></p>
+
+    <script>
+        function contar() {
+            let contador = 1; // Inicializamos el contador
+            let resultado = ""; // Variable para almacenar el resultado
+
+            do {
+                resultado += contador + " "; // Agregamos el contador al resultado
+                contador++; // Incrementamos el contador
+            } while (contador <= 5); // Continuamos mientras el contador sea menor o igual a 5
+
+            document.getElementById("resultado").innerText = resultado; // Mostramos el resultado en el HTML
+        }
+    </script>
+</body>
+</html>

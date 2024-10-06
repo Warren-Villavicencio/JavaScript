@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de Datos</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background-image: url("dairy_farm_background.jpg"); /* Replace with actual background image URL */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .header {
+        background-color: rgba(0, 128, 128, 0.7);
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      .container {
+        background-color: rgba(173, 216, 230, 0.8);
+        padding: 20px;
+        margin: 10px; /* Reduced margin for better fit */
+        border-radius: 10px;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center alignment for navigation */
+        margin-bottom: 20px;
+      }
+
+      .nav-item {
+        background-color: lightblue;
+        color: white;
+        padding: 8px 12px; /* Adjusted padding */
+        border-radius: 5px;
+        margin: 5px; /* Adjusted margin for better spacing */
+        text-align: center;
+      }
+
+      h2 {
+        color: teal;
+        text-align: center;
+        margin-bottom: 15px; /* Added margin */
+      }
+
+      h3 {
+        color: teal;
+        margin-bottom: 8px; /* Added margin */
+      }
+
+      p {
+        color: teal;
+        margin-bottom: 12px; /* Added margin */
+      }
+
+      .graph-container {
+        position: relative;
+        margin: 20px auto;
+        width: 95%; /* Increased width for better mobile view */
+        max-width: 500px;
+      }
+
+      .bar-graph {
+        background-color: rgba(173, 216, 230, 0.5);
+        padding: 20px; /* Increased padding */
+        border-radius: 5px;
+      }
+
+      .bar {
+        height: 30px;
+        margin-bottom: 10px; /* Increased margin */
+        border-radius: 3px;
+      }
+
+      .bar:nth-child(1) {
+        background-color: #22577a;
+        width: 20%;
+      }
+
+      .bar:nth-child(2) {
+        background-color: #38a3a5;
+        width: 40%;
+      }
+
+      .bar:nth-child(3) {
+        background-color: #95d5b2;
+        width: 60%;
+      }
+
+      .bar:nth-child(4) {
+        background-color: #e9d8a6;
+        width: 80%;
+      }
+
+      .bar:nth-child(5) {
+        background-color: #ee9b00;
+        width: 100%;
+      }
+
+      .x-axis {
+        border-bottom: 1px solid gray;
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+      }
+
+      .x-axis::after {
+        content: ">";
+        position: absolute;
+        right: 0;
+        bottom: -8px;
+        font-size: 16px; /* Increased font size */
+      }
+
+      .up-arrow {
+        position: absolute;
+        top: 45%; /* Adjusted vertical position */
+        left: 40%; /* Adjusted horizontal position */
+        transform: translate(-50%, -100%) rotate(25deg); /* Added rotation */
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 15px solid crimson;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>ESTACION AGROPECUARIA UTPL</h1>
+    </div>
+
+    <div class="container">
+      <div class="nav">
+        <div class="nav-item">Alimentación</div>
+        <div class="nav-item">Reproducción</div>
+        <div class="nav-item">Salud</div>
+        <div class="nav-item">Producción de leche</div>
+        <div class="nav-item">Inventario</div>
+      </div>
+
+      <h2>ANALISIS DATOS</h2>
+
+      <h3>Datos Iniciales:</h3>
+      <p>Producción actual diaria: 1000 litros.</p>
+
+      <h3>Supuestos:</h3>
+      <p>
+        Mantendremos una producción constante durante todo el año (sin
+        considerar estacionalidad). No habrá cambios significativos en la
+        cantidad de vacas o en la eficiencia de producción.
+      </p>
+
+      <h3>Proyección:</h3>
+      <p>
+        Producción anual = Producción diaria × Dias en el año <br />
+        Producción anual = 1000 litros/dia × 365 dias = 365,000 litros.
+      </p>
+
+      <h3>Resultado:</h3>
+      <p>
+        Se producirá aproximadamente 365,000 litros de leche en un año
+      </p>
+
+      <div class="graph-container">
+        <div class="bar-graph">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="x-axis">
+            <span style="position: absolute; bottom: -15px; left: 0"
+              >0</span
+            >
+          </div>
+          <div class="up-arrow"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

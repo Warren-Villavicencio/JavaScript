@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de do while - Validación</title>
+</head>
+<body>
+    <h1>Validar Número con do while</h1>
+    <button onclick="validarNumero()">Ingresar Número</button>
+    <p id="resultado"></p>
+
+    <script>
+        function validarNumero() {
+            let numero; // Variable para almacenar el número ingresado
+            do {
+                numero = prompt("Por favor, ingresa un número mayor que 0:"); // Pedimos al usuario que ingrese un número
+                numero = parseInt(numero); // Convertimos el valor ingresado a un número entero
+            } while (isNaN(numero) || numero <= 0); // Repetimos si no es un número o es menor o igual a 0
+
+            document.getElementById("resultado").innerText = "Número válido ingresado: " + numero; // Mostramos el número válido
+        }
+    </script>
+</body>
+</html>

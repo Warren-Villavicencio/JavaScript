@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Recreation</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: sans-serif; background-color: #f5f5f5; display: flex; flex-direction: column; min-height: 100vh;">
+
+  <div style="background: linear-gradient(#222233, #333344); border-radius: 0 40px 0 0; padding: 20px 30px; color: white; flex-shrink: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <div>
+        <i class="fas fa-cloud" style="font-size: 1.5rem;"></i>
+        <i class="fas fa-user" style="font-size: 1.5rem; margin-left: 20px;"></i>
+      </div>
+      <i class="fas fa-bars" style="font-size: 1.5rem;"></i>
+    </div>
+
+    <div style="background-color: white; border-radius: 10px; padding: 10px; display: flex; align-items: center; margin-bottom: 30px;">
+      <input type="text" placeholder="Search" style="border: none; outline: none; padding: 5px; flex-grow: 1; background: transparent; color: #ccc;">
+      <i class="fas fa-search" style="color: #ccc; margin-left: 10px;"></i>
+    </div>
+
+    <div style="background-color: #333; padding: 20px; border-radius: 15px;">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-folder" style="font-size: 2rem; color: #0080ff; margin-right: 15px;"></i>
+        <div>
+          <h3 style="margin: 0; font-size: 1.3rem;">MyDocs</h3>
+          <div style="background-color: #2980b9; height: 5px; width: 100%; border-radius: 5px; margin-top: 5px; overflow: hidden;"> 
+            <div style="background-color: #3498db; height: 100%; width: 68%; border-radius: 5px;"></div>
+          </div>
+          <p style="font-size: 0.8rem; color: #ccc; margin: 5px 0 0 0;">68% Used, 234 Free</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); grid-gap: 30px; flex-grow: 1;">
+    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-folder" style="font-size: 2rem; color: gold; margin-bottom: 10px;"></i>
+      <p style="margin: 0; color: #333;">Assets</p>
+    </div>
+
+    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-box" style="font-size: 2rem; color: gold; margin-bottom: 10px;"></i>
+      <p style="margin: 0; color: #333;">Stuff</p>
+    </div>
+
+    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-mountain" style="font-size: 2rem; color: #333; margin-bottom: 10px;"></i>
+      <p style="margin: 0; color: #333;">Mountain</p>
+    </div>
+
+    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-microphone-alt" style="font-size: 2rem; color: #ff3333; margin-bottom: 10px;"></i>
+      <p style="margin: 0; color: #333;">Record</p>
+    </div>
+
+    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-chart-line" style="font-size: 2rem; color: #333; margin-bottom: 10px;"></i>
+      <p style="margin: 0; color: #333;">Results</p>
+    </div>
+
+    <div style="background-color: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-file-alt" style="font-size: 2rem; color: #333; margin-bottom: 10px;"></i>
+      <p style="margin: 0; color: #333;">Proposal</p>
+    </div>
+  </div>
+
+  <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1;"> 
+    <button style="background-color: white; border: none; border-radius: 50%; padding: 15px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);">
+      <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: #333;"></i>
+    </button>
+  </div>
+
+  <i class="fas fa-music" style="position: fixed; bottom: 20px; left: 20px; color: white; font-size: 1.5rem;"></i>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</body>
+</html>
