@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de for...of - Frutas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Frutas</h1>
+    <ul id="listaFrutas"></ul>
+
+    <script>
+        const frutas = ['Manzana', 'Banana', 'Cereza', 'Durazno', 'Kiwi'];
+        const lista = document.getElementById('listaFrutas');
+
+        for (const fruta of frutas) {
+            const li = document.createElement('li');
+            li.textContent = fruta;
+            lista.appendChild(li);
+        }
+    </script>
+</body>
+</html>
