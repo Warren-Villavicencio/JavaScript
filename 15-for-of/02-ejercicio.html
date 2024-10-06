@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Letras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contar Letras en una Cadena</h1>
+    <input type="text" id="entradaTexto" placeholder="Escribe algo...">
+    <button id="contarBtn">Contar Letras</button>
+    <h2>Letras:</h2>
+    <ul id="listaLetras"></ul>
+
+    <script>
+        const boton = document.getElementById('contarBtn');
+        const lista = document.getElementById('listaLetras');
+
+        boton.addEventListener('click', () => {
+            const texto = document.getElementById('entradaTexto').value;
+            lista.innerHTML = ''; // Limpiar la lista antes de contar
+
+            for (const letra of texto) {
+                const li = document.createElement('li');
+                li.textContent = letra;
+                lista.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>
