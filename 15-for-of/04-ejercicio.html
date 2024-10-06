@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Estudiantes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Curso</th>
+            </tr>
+        </thead>
+        <tbody id="tablaEstudiantes"></tbody>
+    </table>
+
+    <script>
+        const estudiantes = [
+            { nombre: 'Juan', edad: 20, curso: 'Matemáticas' },
+            { nombre: 'Ana', edad: 22, curso: 'Historia' },
+            { nombre: 'Luis', edad: 21, curso: 'Ciencias' }
+        ];
+        const tabla = document.getElementById('tablaEstudiantes');
+
+        for (const estudiante of estudiantes) {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `<td>${estudiante.nombre}</td><td>${estudiante.edad}</td><td>${estudiante.curso}</td>`;
+            tabla.appendChild(fila);
+        }
+    </script>
+</body>
+</html>
