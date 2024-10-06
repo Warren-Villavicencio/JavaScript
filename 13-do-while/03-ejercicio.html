@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  </head>
 <body>
-<p>ingresa el nombre del animal</p>
-    <input type="text" id="nombre_animal">
-    <button onclick="pregunta_animal ()" >ejecutar</button>
-   
+  <p>Ingresa el nombre del animal</p>
+  <input type="text" id="nombre_animal">
+  <button onclick="pregunta_animal()">Ejecutar</button>
+  <img id="imagen_resultado"> <div id="resultado"></div> <script>
+    function pregunta_animal() {
+      let nombre = document.getElementById("nombre_animal").value;
 
+      while (nombre !== "tigre") { // Cambiamos la condición
+        nombre = document.getElementById("nombre_animal").value;
+        if (nombre) { // Verificamos si hay un valor
+          break;
+        }
+      }
 
-
-    <script>
-        function pregunta_animal () {
-let nombre
-
-do {
-nombre = document.getElementById("nombre_animal").value;
-
-}while  ( nombre === "tigre"  )  ;
-
-document.write("<h1>excelente</h1>");
-document.getElementById("imagen_resultado").src = "tigre.jpeg";
-
-}
-    </script>
+      if (nombre === "tigre") {
+        document.getElementById("resultado").innerHTML = "<h1>Excelente!</h1>";
+        document.getElementById("imagen_resultado").src = "tigre.jpeg";
+      } else {
+        document.getElementById("resultado").innerHTML = "Intenta con otro animal.";
+      }
+    }
+  </script>
 </body>
 </html>
