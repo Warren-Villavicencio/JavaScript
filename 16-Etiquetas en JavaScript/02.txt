@@ -1,3 +1,0 @@
-Explicación del Ejemplo 2
-Labels y Inputs: Se utilizan labels para los campos de correo electrónico y contraseña. Ambos campos son obligatorios, indicado por el atributo required.
-Validación: La función validarFormulario() verifica si los campos están vacíos. Si lo están, muestra un mensaje de error; de lo contrario, indica que el formulario se ha enviado con éxito.
