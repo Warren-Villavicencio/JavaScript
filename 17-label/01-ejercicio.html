@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico de Label en HTML</title>
+</head>
+<body>
+    <h1>Ejemplo Básico de Label en HTML</h1>
+    <form id="miFormulario">
+        <!-- Label asociado al input de texto -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+        <br><br>
+        <!-- Botón para enviar el formulario -->
+        <button type="button" onclick="mostrarNombre()">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        // Función para mostrar el nombre ingresado
+        function mostrarNombre() {
+            // Obtenemos el valor del input
+            const nombre = document.getElementById('nombre').value;
+            // Mostramos el nombre en el párrafo con id 'resultado'
+            document.getElementById('resultado').innerText = "Hola, " + nombre + "!";
+        }
+    </script>
+</body>
+</html>
