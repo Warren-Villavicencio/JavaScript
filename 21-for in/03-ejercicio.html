@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Avanzado: Juego de Adivinanza</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Juego de Adivinanza</h1>
+    <p>Adivina el número entre 1 y 5:</p>
+    <input type="number" id="guess" min="1" max="5">
+    <button onclick="adivinar()">Adivinar</button>
+    <div id="result"></div>
+
+    <script>
+        const numeros = { 1: "Uno", 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco" };
+        const numeroSecreto = Math.floor(Math.random() * 5) + 1;
+
+        function adivinar() {
+            const intento = document.getElementById("guess").value;
+            let resultado = "";
+
+            for (let key in numeros) {
+                if (key == intento) {
+                    if (key == numeroSecreto) {
+                        resultado = `<h2>¡Correcto! El número era ${numeros[key]}.</h2>`;
+                    } else {
+                        resultado = `<h2>Incorrecto. Intenta de nuevo.</h2>`;
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
