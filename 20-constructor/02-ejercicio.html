@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Intermedio de Constructor</title>
+</head>
+<body>
+    <h1>Ejemplo Intermedio de Constructor</h1>
+    <script>
+        class Coche {
+            constructor(marca, modelo) {
+                this.marca = marca;
+                this.modelo = modelo;
+            }
+
+            mostrarInfo() {
+                return `Coche: ${this.marca} ${this.modelo}`;
+            }
+        }
+
+        const coche1 = new Coche("Toyota", "Corolla");
+        document.write(coche1.mostrarInfo());
+    </script>
+</body>
+</html>
