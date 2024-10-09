@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Intermedio: Contar Elementos</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo Intermedio: Contar Elementos en un Arreglo</h1>
+    <button onclick="contarElementos()">Contar Elementos</button>
+    <div id="result"></div>
+
+    <script>
+        function contarElementos() {
+            const frutas = ["Manzana", "Banana", "Naranja", "Fresa"];
+            let resultado = "<h2>Frutas:</h2><ul>";
+
+            for (let index in frutas) {
+                resultado += `<li>${frutas[index]}</li>`;
+            }
+            resultado += `</ul><p>Total de frutas: ${frutas.length}</p>`;
+            document.getElementById("result").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
