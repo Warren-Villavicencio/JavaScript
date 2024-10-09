@@ -1,6 +1,6 @@
 let ganado = {
 
-Número_identificación:
+Número_identificación:""
 Raza:
 Sexo:
 Fecha de nacimiento:
