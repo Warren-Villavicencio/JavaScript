@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico de Constructor</title>
+</head>
+<body>
+    <h1>Ejemplo Básico de Constructor</h1>
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+
+        const persona1 = new Persona("Juan", 30);
+        document.write("Nombre: " + persona1.nombre + "<br>");
+        document.write("Edad: " + persona1.edad);
+    </script>
+</body>
+</html>
