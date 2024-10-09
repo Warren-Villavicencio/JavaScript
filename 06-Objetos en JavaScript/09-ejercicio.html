@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.assign()</title>
+</head>
+<body>
+    <h1>Ejemplo de Object.assign()</h1>
+    <script>
+        const persona1 = { nombre: "Carlos", edad: 35 };
+        const persona2 = { ciudad: "Madrid" };
+
+        const personaCompleta = Object.assign({}, persona1, persona2);
+        alert(`Hola, soy ${personaCompleta.nombre}, tengo ${personaCompleta.edad} años y vivo en ${personaCompleta.ciudad}.`);
+    </script>
+</body>
+</html>

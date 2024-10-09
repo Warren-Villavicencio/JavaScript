@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico: Objeto Literal</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #taskList { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Tareas</h1>
+    <input type="text" id="taskInput" placeholder="Añadir tarea">
+    <button onclick="addTask()">Añadir Tarea</button>
+    <div id="taskList"></div>
+
+    <script>
+        const taskManager = {
+            tasks: [],
+            addTask: function(task) {
+                this.tasks.push(task);
+                this.displayTasks();
+            },
+            displayTasks: function() {
+                const taskListDiv = document.getElementById('taskList');
+                taskListDiv.innerHTML = '';
+                this.tasks.forEach((task, index) => {
+                    taskListDiv.innerHTML += `<p>${task} <button onclick="removeTask(${index})">Eliminar</button></p>`;
+                });
+            }
+        };
+
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const task = taskInput.value;
+            if (task) {
+                taskManager.addTask(task);
+                taskInput.value = '';
+            }
+        }
+
+        function removeTask(index) {
+            taskManager.tasks.splice(index, 1);
+            taskManager.displayTasks();
+        }
+    </script>
+</body>
+</html>

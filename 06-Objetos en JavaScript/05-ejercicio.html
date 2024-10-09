@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Literal</title>
+</head>
+<body>
+    <h1>Ejemplo de Objeto Literal</h1>
+    <script>
+        const persona = {
+            nombre: "Juan",
+            edad: 30,
+            saludar: function() {
+                alert(`Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`);
+            }
+        };
+        persona.saludar();
+    </script>
+</body>
+</html>

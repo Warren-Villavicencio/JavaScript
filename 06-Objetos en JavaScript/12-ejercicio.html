@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Avanzado: Clases en JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #taskList { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Tareas con Clases</h1>
+    <input type="text" id="taskInput" placeholder="Añadir tarea">
+    <button onclick="addTask()">Añadir Tarea</button>
+    <div id="taskList"></div>
+
+    <script>
+        class Task {
+            constructor(name) {
+                this.name = name;
+                this.completed = false;
+            }
+        }
+
+        class TaskManager {
+            constructor() {
+                this.tasks = [];
+            }
+
+            addTask(task) {
+                this.tasks.push(task);
+                this.displayTasks();
+            }
+
+            displayTasks() {
+                const taskListDiv = document.getElementById('taskList');
+                taskListDiv.innerHTML = '';
+                this.tasks.forEach((task, index) => {
+                    taskListDiv.innerHTML += `<p>${task.name} <button onclick="removeTask(${index})">Eliminar</button></p>`;
+                });
+            }
+        }
+
+        const taskManager = new TaskManager();
+
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskName = taskInput.value;
+            if (taskName) {
+                const newTask = new Task(taskName);
+                taskManager.addTask(newTask);
+                taskInput.value = '';
+            }
+        }
+
+        function removeTask(index) {
+            taskManager.tasks.splice(index, 1);
+            taskManager.displayTasks();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor de Funciones</title>
+</head>
+<body>
+    <h1>Ejemplo de Constructor de Funciones</h1>
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.saludar = function() {
+                alert(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
+            };
+        }
+
+        const juan = new Persona("Juan", 25);
+        juan.saludar();
+    </script>
+</body>
+</html>
