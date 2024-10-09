@@ -8,7 +8,7 @@ Edad:"5"
 
 Registrar_producción_leche () {
 
-    console.log("produccion")
+    console.log("produccion de leche ")
 
 }
 
