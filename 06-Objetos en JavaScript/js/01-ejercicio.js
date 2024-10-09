@@ -6,7 +6,7 @@ Sexo:"masculino",
 Fecha_nacimiento:"15/5/2021",
 Edad:"5"
 
-Registrar una enfermedad y tratamiento
+Registrar una enfermedad
 
 
 }
