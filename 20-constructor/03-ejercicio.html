@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Avanzado de Constructor</title>
+</head>
+<body>
+    <h1>Ejemplo Avanzado de Constructor</h1>
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="number" id="edad" placeholder="Edad">
+    <button id="crear">Crear Persona</button>
+    <div id="resultado"></div>
+
+    <script>
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+            mostrarInfo() {
+                return `Nombre: ${this.nombre}, Edad: ${this.edad}`;
+            }
+        }
+
+        document.getElementById("crear").addEventListener("click", function() {
+            const nombre = document.getElementById("nombre").value;
+            const edad = document.getElementById("edad").value;
+            const persona = new Persona(nombre, edad);
+            document.getElementById("resultado").innerText = persona.mostrarInfo();
+        });
+    </script>
+</body>
+</html>
