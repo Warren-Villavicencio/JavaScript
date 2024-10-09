@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Avanzado de Clases en JavaScript</title>
+</head>
+<body>
+    <h1>Ejemplo Avanzado de Clases en JavaScript</h1>
+    <script>
+        // Definición de una clase 'Animal'
+        class Animal {
+            constructor(nombre, especie) {
+                this.nombre = nombre;
+                this.especie = especie;
+            }
+
+            hacerSonido() {
+                return `${this.nombre} hace un sonido.`;
+            }
+        }
+
+        // Definición de una clase 'Perro' que hereda de 'Animal'
+        class Perro extends Animal {
+            hacerSonido() {
+                return `${this.nombre} ladra.`;
+            }
+        }
+
+        // Creando un objeto de la clase 'Perro'
+        const miPerro = new Perro("Rex", "Canino");
+        console.log(miPerro.hacerSonido()); // Muestra: Rex ladra.
+    </script>
+</body>
+</html>
