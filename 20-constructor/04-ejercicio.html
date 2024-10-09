@@ -19,13 +19,12 @@
             }
         }
 
-        const animal_1 = new Persona("Juan", 30);
-        document.write("Nombre: " + persona1.nombre + "<br>");
-        document.write("Edad: " + persona1.edad);
-
-        const animal_2 = new Persona("Juan", 30);
-        document.write("Nombre: " + persona1.nombre + "<br>");
-        document.write("Edad: " + persona1.edad);
+        document.getElementById("crear").addEventListener("click", function() {
+            const nombre = document.getElementById("nombre").value;
+            const edad = document.getElementById("edad").value;
+            const persona = new Persona(nombre, edad);
+            document.getElementById("resultado").innerText = persona.mostrarInfo();
+        });
 
     </script>
 </body>
