@@ -1,6 +1,6 @@
 let ganado = {
 
-Número de identificación único (orejera, microchip)
+Númeroidentificación único (orejera, microchip)
 Raza
 Sexo
 Fecha de nacimiento
