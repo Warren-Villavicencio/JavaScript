@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico: Propiedades de un Objeto</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo Básico: Listar Propiedades de un Objeto</h1>
+    <button onclick="listarPropiedades()">Mostrar Propiedades</button>
+    <div id="result"></div>
+
+    <script>
+        function listarPropiedades() {
+            const persona = {
+                nombre: "Juan",
+                edad: 30,
+                ciudad: "Madrid"
+            };
+
+            let resultado = "<h2>Propiedades de la Persona:</h2><ul>";
+            for (let propiedad in persona) {
+                resultado += `<li>${propiedad}: ${persona[propiedad]}</li>`;
+            }
+            resultado += "</ul>";
+            document.getElementById("result").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
