@@ -1,0 +1,21 @@
+.destacado {
+    font-weight: bold;
+    color: blue;
+    font-size: large;
+}
+
+h1 {
+
+    font-style: oblique;
+}
+
+.centro {
+    text-align: center;
+    color: blueviolet;
+    font-weight: lighter;
+}
+
+.derecha {
+
+    text-align: right;
+}
