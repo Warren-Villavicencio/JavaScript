@@ -26,7 +26,7 @@
         document.getElementById("crear").addEventListener("click", function() {
             const nombre = document.getElementById("nombre").value;
             const edad = document.getElementById("edad").value;
-            const perro = new Perro(nombre, edad,raza);
+            const perro = new perro(nombre, edad,raza);
             document.getElementById("resultado").innerText = perro.mostrarInfo();
         });
 
