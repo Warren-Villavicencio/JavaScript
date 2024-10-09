@@ -1,5 +1,5 @@
 let vaca = {
-    Número_identificación:"0001",
+    Número_identificación:"1",
     Raza:"holstein",
     Sexo:"femenino",
     Fecha_nacimiento:"15/5/2021",
