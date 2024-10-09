@@ -22,20 +22,20 @@
         class empleado {
              constructor(nombre, cargo) {
                  this.nombre = nombre;
-                 this.edad = edad;
+                 this.cargo = cargo;
                  this.raza = raza;
              }
  
              mostrarInfo() {
-                 return `Nombre: ${this.nombre}, Edad: ${this.edad},raza: ${this.raza}`;
+                 return `Nombre: ${this.nombre}, cargo: ${this.cargo},raza: ${this.raza}`;
              }
          }
  
          document.getElementById("crear").addEventListener("click", function() {
              const nombre = document.getElementById("nombre").value;
-             const edad = document.getElementById("edad").value;
-             const raza = document.getElementById("edad").value;
-             const perro = new Perro(nombre, edad,raza);
+             const cargo = document.getElementById("cargo").value;
+             const raza = document.getElementById("cargo").value;
+             const perro = new Perro(nombre, cargo,raza);
              document.getElementById("resultado").innerText = perro.mostrarInfo();
          });
  
