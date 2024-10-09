@@ -1,1 +1,1 @@
-let ganado = 
+let ganado = {}
