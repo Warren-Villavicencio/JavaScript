@@ -2,7 +2,7 @@ let ganado = {
 
 Número_identificación:""
 Raza:""
-Sexo:
+Sexo:""
 Fecha de nacimiento:
 Edad:
 
