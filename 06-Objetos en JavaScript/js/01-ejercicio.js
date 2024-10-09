@@ -6,9 +6,9 @@ Sexo:"masculino",
 Fecha_nacimiento:"15/5/2021",
 Edad:"5"
 
-Registrar_enfermedad () {
+Registrar_enfermedad (): {
 
-    
+
 }
 
 
