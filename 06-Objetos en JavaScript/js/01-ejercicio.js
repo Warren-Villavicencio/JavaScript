@@ -1,4 +1,4 @@
-let ganado = {
+let vaca = {
 
 Número_identificación:"0001",
 Raza:"holstein",
