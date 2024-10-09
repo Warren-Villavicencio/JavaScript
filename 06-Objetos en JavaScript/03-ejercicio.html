@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Intermedio de Objeto</title>
+</head>
+<body>
+    <h1>Ejemplo Intermedio de Objeto en JavaScript</h1>
+    <script>
+        // Creación de un objeto 'coche'
+        const coche = {
+            marca: "Toyota",
+            modelo: "Corolla",
+            año: 2020,
+            mostrarDetalles: function() {
+                return `Coche: ${this.marca} ${this.modelo}, Año: ${this.año}`;
+            },
+            actualizarAño: function(nuevoAño) {
+                this.año = nuevoAño;
+            }
+        };
+
+        // Mostrando detalles del coche
+        console.log(coche.mostrarDetalles()); // Muestra: Coche: Toyota Corolla, Año: 2020
+
+        // Actualizando el año del coche
+        coche.actualizarAño(2021);
+        console.log(coche.mostrarDetalles()); // Muestra: Coche: Toyota Corolla, Año: 2021
+    </script>
+</body>
+</html>
