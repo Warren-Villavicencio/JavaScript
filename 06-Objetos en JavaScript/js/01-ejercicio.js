@@ -7,6 +7,6 @@ let vaca = {
 
     Registrar_producción_leche () {
         console.log("produccion de leche 20 litros")
-        document.textContent=
+        document.textContent=&
     }
 }
