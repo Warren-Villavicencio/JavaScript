@@ -6,7 +6,7 @@ Sexo:"masculino",
 Fecha_nacimiento:"15/5/2021",
 Edad:"5"
 
-Registrarproducción de leche () {
+Registrar_producción de leche () {
 
 
 }
