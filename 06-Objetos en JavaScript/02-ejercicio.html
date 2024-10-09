@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico de Objeto</title>
+</head>
+<body>
+    <h1>Ejemplo Básico de Objeto en JavaScript</h1>
+    <script>
+        // Creación de un objeto llamado 'persona'
+        const persona = {
+            nombre: "Juan",
+            edad: 30,
+            saludar: function() {
+                return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`;
+            }
+        };
+
+        // Accediendo a las propiedades y métodos del objeto
+        console.log(persona.saludar()); // Muestra: Hola, mi nombre es Juan y tengo 30 años.
+    </script>
+</body>
+</html>
