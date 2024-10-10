@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+#nba-standings {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+#nba-standings table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+#nba-standings th, #nba-standings td {
+    padding: 10px;
+    text-align: center;
+}
