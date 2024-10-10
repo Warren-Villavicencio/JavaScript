@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        img { max-width: 300px; margin: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Galería de Imágenes</h1>
+    <div id="galeria"></div>
+    <button onclick="galeria.mostrarSiguiente()">Siguiente</button>
+    <button onclick="galeria.mostrarAnterior()">Anterior</button>
+
+    <script>
+        // Definición de la función constructora 'Galeria'
+        // Esta función se utiliza para crear un nuevo objeto 'Galeria' con una lista de imágenes y un índice actual
+        function Galeria(imagenes) {
+            this.imagenes = imagenes; // Asigna la lista de imágenes pasada como argumento a la propiedad 'imagenes'
+            this.indiceActual = 0;    // Inicializa el índice actual en 0
+        }
+
+        // Añadiendo un método 'mostrarImagen' al prototipo de 'Galeria'
+        // Este método muestra la imagen actual en el div con id 'galeria'
+        Galeria.prototype.mostrarImagen = function() {
+            const galeriaDiv = document.getElementById('galeria');
+            galeriaDiv.innerHTML = `<img src="${this.imagenes[this.indiceActual]}" alt="Imagen">`;
+        };
+
+        // Añadiendo un método 'mostrarSiguiente' al prototipo de 'Galeria'
+        // Este método incrementa el índice actual y muestra la siguiente imagen
+        Galeria.prototype.mostrarSiguiente = function() {
+            this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
+            this.mostrarImagen();
+        };
+
+        // Añadiendo un método 'mostrarAnterior' al prototipo de 'Galeria'
+        // Este método decrementa el índice actual y muestra la imagen anterior
+        Galeria.prototype.mostrarAnterior = function() {
+            this.indiceActual = (this.indiceActual - 1 + this.imagenes.length) % this.imagenes.length;
+            this.mostrarImagen();
+        };
+
+        // Lista de URLs de imágenes
+        const imagenes = [
+            'https://via.placeholder.com/300/FF0000/FFFFFF?text=Imagen+1',
+            'https://via.placeholder.com/300/00FF00/FFFFFF?text=Imagen+2',
+            'https://via.placeholder.com/300/0000FF/FFFFFF?text=Imagen+3'
+        ];
+
+        // Creación de una nueva instancia de 'Galeria' con la lista de imágenes
+        const galeria = new Galeria(imagenes);
+
+        // Muestra la primera imagen al cargar la página
+        galeria.mostrarImagen();
+    </script>
+</body>
+</html>
