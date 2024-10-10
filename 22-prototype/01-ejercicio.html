@@ -16,21 +16,28 @@
     <button onclick="contador.decrementar()">Decrementar</button>
 
     <script>
+        // Definición de la función constructora 'Contador'
+        // Esta función se utiliza para crear un nuevo objeto 'Contador' con una propiedad 'valor' inicializada en 0
         function Contador() {
-            this.valor = 0;
+            this.valor = 0; // Inicializa la propiedad 'valor' en 0
         }
 
+        // Añadiendo un método 'incrementar' al prototipo de 'Contador'
+        // Este método incrementa el valor del contador y actualiza el contenido del elemento con id 'count'
         Contador.prototype.incrementar = function() {
-            this.valor++;
-            document.getElementById('count').innerText = this.valor;
+            this.valor++; // Incrementa el valor del contador
+            document.getElementById('count').innerText = this.valor; // Actualiza el contenido del elemento 'count' con el nuevo valor
         };
 
+        // Añadiendo un método 'decrementar' al prototipo de 'Contador'
+        // Este método decrementa el valor del contador y actualiza el contenido del elemento con id 'count'
         Contador.prototype.decrementar = function() {
-            this.valor--;
-            document.getElementById('count').innerText = this.valor;
+            this.valor--; // Decrementa el valor del contador
+            document.getElementById('count').innerText = this.valor; // Actualiza el contenido del elemento 'count' con el nuevo valor
         };
 
-        const contador = new Contador();
+        // Creación de una nueva instancia de 'Contador'
+        const contador = new Contador(); // Crea un nuevo objeto 'Contador'
     </script>
 </body>
 </html>
