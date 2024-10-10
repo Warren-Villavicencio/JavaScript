@@ -6,6 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    sc
+    <script>
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function() {
+  console.log("Hola, mi nombre es " + this.name);
+};
+
+const person1 = new Person("Juan", 30);
+const person2 = new Person("María", 25);
+
+person1.greet(); // Output: Hola, mi nombre es Juan
+person2.greet(); // Output: Hola, mi nombre es María
+    </script>
 </body>
 </html>
