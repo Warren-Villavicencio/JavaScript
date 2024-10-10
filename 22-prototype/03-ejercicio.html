@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        img { max-width: 300px; margin: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Galería de Imágenes</h1>
+    <div id="galeria"></div>
+    <button onclick="galeria.mostrarSiguiente()">Siguiente</button>
+    <button onclick="galeria.mostrarAnterior()">Anterior</button>
+
+    <script>
+        function Galeria(imagenes) {
+            this.imagenes = imagenes;
+            this.indiceActual = 0;
+        }
+
+        Galeria.prototype.mostrarImagen = function() {
+            const galeriaDiv = document.getElementById('galeria');
+            galeriaDiv.innerHTML = `<img src="${this.imagenes[this.indiceActual]}" alt="Imagen">`;
+        };
+
+        Galeria.prototype.mostrarSiguiente = function() {
+            this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
+            this.mostrarImagen();
+        };
+
+        Galeria.prototype.mostrarAnterior = function() {
+            this.indiceActual = (this.indiceActual - 1 + this.imagenes.length) % this.imagenes.length;
+            this.mostrarImagen();
+        };
+
+        const imagenes = [
+            'https://via.placeholder.com/300/FF0000/FFFFFF?text=Imagen+1',
+            'https://via.placeholder.com/300/00FF00/FFFFFF?text=Imagen+2',
+            'https://via.placeholder.com/300/0000FF/FFFFFF?text=Imagen+3'
+        ];
+        const galeria = new Galeria(imagenes);
+        galeria.mostrarImagen();
+    </script>
+</body>
+</html>
