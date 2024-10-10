@@ -1,0 +1,30 @@
+/* Estilos generales para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif; /* Fuente utilizada en el documento */
+    background-color: #eaeaea; /* Color de fondo del documento */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos para el encabezado h1 */
+h1 {
+    text-align: center; /* Centra el texto del encabezado */
+}
+
+/* Estilos para el contenedor de las clasificaciones de la NBA */
+#nba-standings {
+    margin: 20px auto; /* Margen de 20px en la parte superior e inferior, y centrado horizontalmente */
+    width: 80%; /* Ancho del 80% del contenedor padre */
+    border-collapse: collapse; /* Colapsa los bordes de la tabla para que se vean como uno solo */
+}
+
+/* Estilos para la tabla dentro del contenedor de clasificaciones de la NBA */
+#nba-standings table {
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    border: 1px solid #ccc; /* Borde de 1px de color gris claro alrededor de la tabla */
+}
+
+/* Estilos para las celdas de la tabla (th y td) */
+#nba-standings th, #nba-standings td {
+    padding: 10px; /* Relleno de 10px dentro de cada celda */
+    text-align: center; /* Centra el texto dentro de cada celda */
+}
