@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Coche</title>
+</head>
+<body>
+    <h1>Ejemplo Intermedio de Clase en JavaScript</h1>
+    <script>
+        // Definimos una clase llamada Coche
+        class Coche {
+            constructor(marca, modelo) {
+                this.marca = marca; // Asignamos la marca
+                this.modelo = modelo; // Asignamos el modelo
+            }
+
+            // Método para mostrar información del coche
+            mostrarInfo() {
+                return `Coche: ${this.marca} ${this.modelo}`;
+            }
+        }
+
+        // Creamos una nueva instancia de Coche
+        const coche1 = new Coche("Toyota", "Corolla");
+        // Mostramos la información en la consola
+        console.log(coche1.mostrarInfo());
+    </script>
+</body>
+</html>
