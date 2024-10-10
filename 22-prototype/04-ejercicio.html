@@ -7,23 +7,29 @@
 </head>
 <body>
     <script>
+        // Definición de la función constructora 'Person'
+        // Esta función se utiliza para crear nuevos objetos 'Person' con propiedades 'name' y 'age'
+        function Person(name, age) {
+            this.name = name; // Asigna el nombre pasado como argumento a la propiedad 'name'
+            this.age = age;   // Asigna la edad pasada como argumento a la propiedad 'age'
+        }
 
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-}
+        // Añadiendo un método 'greet' al prototipo de 'Person'
+        // Esto asegura que todas las instancias de 'Person' puedan usar este método
+        Person.prototype.greet = function() {
+            // Imprime un mensaje de saludo en la consola usando las propiedades 'name' y 'age'
+            console.log("Hola, mi nombre es " + this.name + " y mi edad es: " + this.age);
+        };
 
-Person.prototype.greet = function() {
-  console.log("Hola, mi nombre es " + this.name + " y i edad es: " + this.age);
-};
+        // Creación de nuevas instancias del objeto 'Person'
+        const person1 = new Person("Juan", 30); // Crea un objeto 'Person' con nombre 'Juan' y edad 30
+        const person2 = new Person("María", 25); // Crea un objeto 'Person' con nombre 'María' y edad 25
+        const person3 = new Person("Warren", 46); // Crea un objeto 'Person' con nombre 'Warren' y edad 46
 
-const person1 = new Person("Juan", 30);
-const person2 = new Person("María", 25);
-const person3 = new Person("Warren",46);
-
-person1.greet(); // Output: Hola, mi nombre es Juan
-person2.greet(); // Output: Hola, mi nombre es María
-person3.greet();
+        // Llamada al método 'greet' de cada instancia de 'Person'
+        person1.greet(); // Output: Hola, mi nombre es Juan y mi edad es: 30
+        person2.greet(); // Output: Hola, mi nombre es María y mi edad es: 25
+        person3.greet(); // Output: Hola, mi nombre es Warren y mi edad es: 46
     </script>
 </body>
 </html>
