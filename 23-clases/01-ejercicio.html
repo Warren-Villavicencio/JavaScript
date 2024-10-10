@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Persona</title>
+</head>
+<body>
+    <h1>Ejemplo Básico de Clase en JavaScript</h1>
+    <script>
+        // Definimos una clase llamada Persona
+        class Persona {
+            // El constructor se ejecuta cuando creamos una nueva instancia de la clase
+            constructor(nombre, edad) {
+                this.nombre = nombre; // Asignamos el nombre
+                this.edad = edad;     // Asignamos la edad
+            }
+
+            // Método para presentarse
+            presentarse() {
+                return `Hola, soy ${this.nombre} y tengo ${this.edad} años.`;
+            }
+        }
+
+        // Creamos una nueva instancia de Persona
+        const persona1 = new Persona("Juan", 30);
+        // Mostramos el mensaje en la consola
+        console.log(persona1.presentarse());
+    </script>
+</body>
+</html>
