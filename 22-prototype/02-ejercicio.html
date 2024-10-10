@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 5px 0; }
+        button { padding: 5px 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tarea" placeholder="Nueva tarea">
+    <button onclick="listaTareas.agregarTarea()">Agregar Tarea</button>
+    <ul id="tareas"></ul>
+
+    <script>
+        // Definición de la función constructora 'ListaTareas'
+        // Esta función se utiliza para crear un nuevo objeto 'ListaTareas' con una lista vacía de tareas
+        function ListaTareas() {
+            this.tareas = []; // Inicializa la lista de tareas como un arreglo vacío
+        }
+
+        // Añadiendo un método 'agregarTarea' al prototipo de 'ListaTareas'
+        // Este método agrega una nueva tarea a la lista de tareas
+        ListaTareas.prototype.agregarTarea = function() {
+            const tareaInput = document.getElementById('tarea'); // Obtiene el elemento input de la tarea
+            const tareaTexto = tareaInput.value; // Obtiene el texto de la tarea del input
+            if (tareaTexto) { // Verifica que el texto de la tarea no esté vacío
+                this.tareas.push(tareaTexto); // Agrega la tarea a la lista de tareas
+                tareaInput.value = ''; // Limpia el input de la tarea
+                this.mostrarTareas(); // Muestra la lista actualizada de tareas
+            }
+        };
+
+        // Añadiendo un método 'eliminarTarea' al prototipo de 'ListaTareas'
+        // Este método elimina una tarea de la lista de tareas según su índice
+        ListaTareas.prototype.eliminarTarea = function(index) {
+            this.tareas.splice(index, 1); // Elimina la tarea del arreglo en el índice especificado
+            this.mostrarTareas(); // Muestra la lista actualizada de tareas
+        };
+
+        // Añadiendo un método 'mostrarTareas' al prototipo de 'ListaTareas'
+        // Este método muestra todas las tareas en la lista de tareas en el elemento ul
+        ListaTareas.prototype.mostrarTareas = function() {
+            const lista = document.getElementById('tareas'); // Obtiene el elemento ul de la lista de tareas
+            lista.innerHTML = ''; // Limpia el contenido actual de la lista
+            this.tareas.forEach((tarea, index) => { // Itera sobre cada tarea en la lista de tareas
+                const li = document.createElement('li'); // Crea un nuevo elemento li para cada tarea
+                li.innerText = tarea; // Establece el texto del li como la tarea
+                const btn = document.createElement('button'); // Crea un nuevo botón para eliminar la tarea
+                btn.innerText = 'Eliminar'; // Establece el texto del botón
+                btn.onclick = () => this.eliminarTarea(index); // Asigna la función de eliminar tarea al botón
+                li.appendChild(btn); // Añade el botón al li
+                lista.appendChild(li); // Añade el li a la lista ul
+            });
+        };
+
+        // Creación de una nueva instancia de 'ListaTareas'
+        const listaTareas = new ListaTareas();
+    </script>
+</body>
+</html>
