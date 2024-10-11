@@ -1,33 +1,56 @@
-// script.js
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', () => {
+    const resultInput = document.getElementById('result');
+    const buttons = document.querySelectorAll('.btn');
+    let currentInput = '';
+    let operator = '';
+    let firstOperand = null;
 
-// Función para agregar un valor al resultado
-function appendToResult(value) {
-    document.getElementById('result').value += value;
-}
+    // Función para manejar los clics en los botones
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const value = button.getAttribute('data-value');
 
-// Función para limpiar el resultado
-function clearResult() {
-    document.getElementById('result').value = '';
-}
+            if (value === 'C') {
+                // Limpiar la entrada
+                currentInput = '';
+                resultInput.value = '';
+            } else if (value === '=') {
+                // Calcular el resultado
+                if (firstOperand !== null && operator) {
+                    currentInput = calculate(firstOperand, parseFloat(currentInput), operator).toString();
+                    resultInput.value = currentInput;
+                    firstOperand = null;
+                    operator = '';
+                }
+            } else if (['+', '-', '*', '/'].includes(value)) {
+                // Guardar el operador y el primer operando
+                if (currentInput) {
+                    firstOperand = parseFloat(currentInput);
+                    operator = value;
+                    currentInput = '';
+                }
+            } else {
+                // Agregar el número a la entrada actual
+                currentInput += value;
+                resultInput.value = currentInput;
+            }
+        });
+    });
 
-// Función para calcular el resultado
-function calculateResult() {
-    const resultField = document.getElementById('result');
-    try {
-        const result = eval(resultField.value); // Usar eval con precaución
-        resultField.value = result;
-        // Aquí podrías usar fetch para enviar el resultado a un servidor
-        fetch('https://example.com/api/result', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ result: result })
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
-    } catch (error) {
-        resultField.value = 'Error';
+    // Función para realizar el cálculo
+    function calculate(a, b, op) {
+        switch (op) {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                return a / b;
+            default:
+                return b;
+        }
     }
-}
+});
