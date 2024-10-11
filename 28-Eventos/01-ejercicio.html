@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/01-ejercicio.css">
     <title>Calculadora Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator">
-        <input title="Selecciona una operación" type="text" id="result" disabled>
+        <input type="text" id="result" disabled>
         <div class="buttons">
-            <button onclick="clearResult()">C</button>
-            <button onclick="appendToResult('1')">1</button>
-            <button onclick="appendToResult('2')">2</button>
-            <button onclick="appendToResult('3')">3</button>
-            <button onclick="appendToResult('+')">+</button>
-            <button onclick="appendToResult('4')">4</button>
-            <button onclick="appendToResult('5')">5</button>
-            <button onclick="appendToResult('6')">6</button>
-            <button onclick="appendToResult('-')">-</button>
-            <button onclick="appendToResult('7')">7</button>
-            <button onclick="appendToResult('8')">8</button>
-            <button onclick="appendToResult('9')">9</button>
-            <button onclick="appendToResult('*')">*</button>
-            <button onclick="appendToResult('0')">0</button>
-            <button onclick="calculateResult()">=</button>
-            <button onclick="appendToResult('/')">/</button>
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn" data-value="/">/</button>
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn" data-value="*">*</button>
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn" data-value="-">-</button>
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value="C">C</button>
+            <button class="btn" data-value="=">=</button>
+            <button class="btn" data-value="+">+</button>
         </div>
     </div>
-    <script src="js/01-ejercicio.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
