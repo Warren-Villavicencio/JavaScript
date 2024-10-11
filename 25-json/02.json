@@ -1,0 +1,6 @@
+{
+    "nombre": "Producto A",
+    "precio": 19.99,
+    "disponible": true,
+    "colores": ["rojo", "azul", "verde"]
+  }
