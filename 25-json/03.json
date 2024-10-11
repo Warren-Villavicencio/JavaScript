@@ -1,0 +1,12 @@
+{
+    "empresa": {
+      "nombre": "Mi Empresa",
+      "ubicacion": {
+        "ciudad": "Barcelona",
+        "pais": "España"
+      }
+    },
+    "empleados": [
+      // ... lista de empleados
+    ]
+  }
