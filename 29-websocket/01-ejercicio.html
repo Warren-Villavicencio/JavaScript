@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Posiciones - Liga Inglesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Posiciones - Liga Inglesa</h1>
+    <table id="standings">
+        <thead>
+            <tr>
+                <th>Equipo</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se llenarán dinámicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:8080');
+
+        ws.onmessage = function(event) {
+            const standings = JSON.parse(event.data);
+            const tbody = document.getElementById('standings').getElementsByTagName('tbody')[0];
+            tbody.innerHTML = ''; // Limpiar el contenido anterior
+
+            standings.forEach(team => {
+                const row = tbody.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                cell1.textContent = team.team;
+                cell2.textContent = team.points;
+            });
+        };
+
+        ws.onopen = function() {
+            console.log('Conectado al servidor WebSocket');
+        };
+
+        ws.onclose = function() {
+            console.log('Desconectado del servidor WebSocket');
+        };
+    </script>
+</body>
+</html>
