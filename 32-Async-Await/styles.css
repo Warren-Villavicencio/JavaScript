@@ -18,7 +18,7 @@ body {
 
 button {
     padding: 10px 20px;
-    color: chartreuse;
+    color: rgb(68, 0, 255);
     font-size: 16px;
     cursor: pointer;
 }
