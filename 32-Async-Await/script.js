@@ -1,5 +1,5 @@
 // API Key de OpenWeatherMap
-const API_KEY = 'a4ae66da9e9c064567bb28e081dac330'; // Reemplaza con tu API Key
+const API_KEY = 'bb3ccecf00c236e3c41fb8970ea38df1'; // Reemplaza con tu API Key
 
 // Clase para manejar la obtención del clima
 class Weather {
