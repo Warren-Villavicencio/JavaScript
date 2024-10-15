@@ -1,4 +1,6 @@
-document.getElementById('fetchDogButton').addEventListener('click', fetchDogImage);
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('fetchDogButton').addEventListener('click', fetchDogImage);
+});
 
 function fetchDogImage() {
     fetch('https://dog.ceo/api/breeds/image/random')
