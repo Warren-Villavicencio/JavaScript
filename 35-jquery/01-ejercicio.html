@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Medallas Olímpicas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Tablero de Medallas Olímpicas</h1>
+        <form id="medalForm">
+            <input type="text" id="goldWinner" placeholder="Ganador Medalla de Oro" required>
+            <input type="text" id="silverWinner" placeholder="Ganador Medalla de Plata" required>
+            <input type="text" id="bronzeWinner" placeholder="Ganador Medalla de Bronce" required>
+            <button type="submit">Agregar Ganadores</button>
+        </form>
+        <h2>Ganadores</h2>
+        <ul id="winnersList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
