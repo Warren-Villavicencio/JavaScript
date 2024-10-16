@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Avanzado de SRC</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Ejemplo de jQuery</h1>
+    <button id="miBoton">Haz clic aquí</button>
+    <p id="mensaje"></p>
+
+    <script>
+        $(document).ready(function() {
+            $("#miBoton").click(function() {
+                $("#mensaje").text("¡Hola, has hecho clic en el botón!");
+            });
+        });
+    </script>
+</body>
+</html>
