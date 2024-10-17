@@ -6,7 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button id="mostrar">Mostrar Texto</button>
+    <p class="oculto" id="texto">¡Hola! Este texto se muestra al hacer clic en el botón.</p>
+
+    <script>
+        document.getElementById("mostrar").onclick = function() {
+            document.getElementById("texto").classList.remove("oculto");
+        };
+    </script>
 </body>
 </html>
 
