@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Flexbox Estilizada</title>
+    <style>
+        .tabla {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            width: 80%;
+            margin: auto;
+        }
+        .fila {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .celda {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            border-right: 1px solid #ccc;
+        }
+        .celda:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabla">
+        <div class="fila">
+            <div class="celda">Nombre</div>
+            <div class="celda">Edad</div>
+            <div class="celda">Ciudad</div>
+        </div>
+        <div class="fila">
+            <div class="celda">Juan</div>
+            <div class="celda">30</div>
+            <div class="celda">Madrid</div>
+        </div>
+    </div>
+</body>
+</html>
