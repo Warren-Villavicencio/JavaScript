@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Flexbox</title>
+    <style>
+        .tabla {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+        }
+        .fila {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+        }
+        .celda {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabla">
+        <div class="fila">
+            <div class="celda">Encabezado 1</div>
+            <div class="celda">Encabezado 2</div>
+            <div class="celda">Encabezado 3</div>
+        </div>
+        <div class="fila">
+            <div class="celda">Dato 1</div>
+            <div class="celda">Dato 2</div>
+            <div class="celda">Dato 3</div>
+        </div>
+    </div>
+</body>
+</html>
