@@ -40,10 +40,10 @@
               <filter id="dropshadow" height="130%">
                 <fegaussianblur in="SourceAlpha" stdDeviation="3" />
                 <feoffset dx="2" dy="2" result="offsetblur" />
-                <fekjmerge>
+                <fekmerge>
                   <feMergeNode />
                   <feMergeNode in="SourceGraphic" />
-                </fekjmerge>
+                </fekmerge>
               </filter>
             </defs>
             <text x="10" y="40" fill="black" font-size="30" filter="url(#dropshadow)">Texto con sombra</text>
