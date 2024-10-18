@@ -64,7 +64,24 @@
           </svg>
     </div>
     <div>
-        
+        <svg width="400" height="200" id="d3svg"></svg>
+        <script type="text/javascript">
+          var svg = d3.select("#d3svg");
+      
+          svg.append("circle")
+            .attr("cx", 50)
+            .attr("cy", 50)
+            .attr("r", 40)
+            .attr("fill", "steelblue")
+            .on("click", function() {
+              d3.select(this)
+                .attr("fill", "orange")
+                .transition()
+                .duration(2000)
+                .attr("cx", 150)
+                .attr("cy", 150);
+            });
+        </script>
     </div>
     <div>
         
