@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tabla de Posiciones - Liga Inglesa</title>
+</head>
+<body>
+    <h1>Tabla de Posiciones - Liga Inglesa</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Premier_League_Logo.png" alt="Logo de la Premier League" class="logo">
+    <table id="tabla-posiciones">
+        <thead>
+            <tr>
+                <th>Equipo</th>
+                <th>Partidos Jugados</th>
+                <th>Victorias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Goles a Favor</th>
+                <th>Goles en Contra</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se agregarán dinámicamente aquí -->
+        </tbody>
+    </table>
+    <h2>Agregar Resultado de Partido</h2>
+    <form id="form-partido">
+        <input type="text" id="equipo1" placeholder="Equipo 1" required>
+        <input type="number" id="goles1" placeholder="Goles Equipo 1" required>
+        <input type="text" id="equipo2" placeholder="Equipo 2" required>
+        <input type="number" id="goles2" placeholder="Goles Equipo 2" required>
+        <button type="submit">Agregar Resultado</button>
+    </form>
+    
+    <h2>Gráfico de Posiciones</h2>
+    <div id="grafico-svg">
+        <svg width="600" height="400" id="grafico" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="20" font-size="20" fill="black">Gráfico de Posiciones</text>
+            <!-- Gráficos de posiciones se agregarán aquí -->
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
