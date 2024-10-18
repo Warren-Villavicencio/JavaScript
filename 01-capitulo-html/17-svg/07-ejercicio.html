@@ -100,7 +100,17 @@
           </svg>
     </div>
     <div>
-        
+        <svg width="200" height="200" id="scrollsvg" xmlns="http://www.w3.org/2000/svg">
+            <rect id="scrollrect" x="10" y="10" width="100" height="100" fill="green" />
+            <script type="text/javascript">
+              var rect = document.getElementById('scrollrect');
+              
+              window.addEventListener('scroll', function() {
+                var scrollPos = window.scrollY;
+                rect.setAttribute('y', 10 + scrollPos / 10);
+              });
+            </script>
+          </svg>
     </div>
 
 </body>
