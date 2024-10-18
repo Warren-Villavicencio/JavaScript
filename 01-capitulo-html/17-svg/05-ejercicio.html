@@ -30,7 +30,28 @@
     </div>
 
     <div>
-        
+        <svg width="400" height="200" id="dragsvg" xmlns="http://www.w3.org/2000/svg">
+            <circle id="dragme" cx="50" cy="50" r="20" fill="red" />
+            <script type="text/javascript">
+              let svg = document.getElementById('dragsvg');
+              let circle = document.getElementById('dragme');
+              let selectedElement = false;
+              svg.addEventListener('mousedown', function(event){
+                if (event.target === circle) {
+                  selectedElement = circle;
+                }
+              });
+              svg.addEventListener('mousemove', function(event){
+                if (selectedElement) {
+                  selectedElement.setAttribute('cx', event.clientX);
+                  selectedElement.setAttribute('cy', event.clientY);
+                }
+              });
+              svg.addEventListener('mouseup', function(){
+                selectedElement = false;
+              });
+            </script>
+          </svg>
     </div>
 
     <div>
