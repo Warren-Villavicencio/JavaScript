@@ -84,7 +84,20 @@
         </script>
     </div>
     <div>
-        
+        <svg width="200" height="200" id="touchsvg" xmlns="http://www.w3.org/2000/svg">
+            <circle id="touchcircle" cx="100" cy="100" r="50" fill="lightblue" />
+            <script type="text/javascript">
+              var touchCircle = document.getElementById('touchcircle');
+              
+              touchCircle.addEventListener('touchstart', function(event) {
+                this.setAttribute('fill', 'darkblue');
+              });
+              
+              touchCircle.addEventListener('touchend', function(event) {
+                this.setAttribute('fill', 'lightblue');
+              });
+            </script>
+          </svg>
     </div>
     <div>
         
