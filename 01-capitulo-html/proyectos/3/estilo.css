@@ -184,7 +184,7 @@ body {
 }
 
 .position_absolute {
-    
+    position: absolute; top: 10px; right: 0;
 }
 
 h1{
