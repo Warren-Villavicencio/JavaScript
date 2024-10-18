@@ -1,0 +1,150 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Fuente principal para todo el documento */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Color de fondo de la página */
+}
+
+.container {
+    display: flex; /* Usa flexbox para el diseño de dos columnas */
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del contenedor */
+}
+
+/* Estilos para la sección de perfil (columna izquierda) */
+.profile-section {
+    flex: 1; /* Toma 1 parte del espacio flexible */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo ligeramente diferente */
+}
+
+.profile-picture {
+    width: 100%; /* La imagen ocupa todo el ancho disponible */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    margin-bottom: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    background-color: #333; /* Color de fondo del icono */
+    border-radius: 50%; /* Hace que el icono sea circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+/* Estilos para las habilidades */
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-level {
+    display: flex;
+    margin-top: 5px;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Hace que los indicadores sean circulares */
+    background-color: #ccc; /* Color por defecto */
+    margin-right: 5px;
+}
+
+/* Colores personalizados para cada habilidad */
+.creative .circle { background-color: #f2994a; }
+.teamwork .circle { background-color: #219653; }
+.attitude .circle { background-color: #2f80ed; }
+
+/* Estilos para la información de contacto */
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-info img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Estilos para la sección principal (columna derecha) */
+.right-section {
+    flex: 2; /* Toma 2 partes del espacio flexible (el doble que la columna izquierda) */
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.design-icon {
+    width: 80px;
+    height: 80px;
+}
+
+/* Estilos para los encabezados de sección */
+.section-header {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* Colores de fondo para los encabezados de sección */
+.education { background-color: #f29a9a; }
+.work-experience { background-color: #f2994a; }
+
+/* Estilos para la lista de experiencias */
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.experience-header .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.experience-info {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Cambia a diseño de una columna en pantallas pequeñas */
+    }
+    
+    .profile-section, .right-section {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    }
+}
