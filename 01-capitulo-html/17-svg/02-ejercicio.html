@@ -35,7 +35,19 @@
     </div>
 
     <div>
-
+        <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="dropshadow" height="130%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                <feOffset dx="2" dy="2" result="offsetblur" />
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <text x="10" y="40" fill="black" font-size="30" filter="url(#dropshadow)">Texto con sombra</text>
+          </svg>
     </div>
 
     <div>
