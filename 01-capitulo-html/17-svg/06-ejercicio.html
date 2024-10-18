@@ -36,7 +36,23 @@
           </svg>
     </div>
     <div>
-        
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              @keyframes move {
+                from {
+                  transform: translate(0, 0);
+                }
+                to {
+                  transform: translate(100px, 100px);
+                }
+              }
+              rect {
+                fill: blue;
+                animation: move 2s infinite alternate;
+              }
+            </style>
+            <rect x="10" y="10" width="80" height="80" />
+          </svg>
     </div>
     <div>
         
