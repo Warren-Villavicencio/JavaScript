@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Tips</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f7f1e3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      width: min(90vw, 600px);
+    }
+
+    .arrow {
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      color: #40407a;
+      overflow: hidden; /* Ensures the rotated text doesn't overflow */
+    }
+
+    .arrow .number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 50%;
+      padding: 10px;
+      font-size: 1.2em;
+    }
+
+    .arrow.top-left {
+      grid-column: 1 / span 2;
+      text-align: left;
+    }
+
+    .arrow.top-right {
+      grid-column: 1 / span 2;
+      text-align: right;
+    }
+
+    /* Rotated Text Styles */
+    .arrow.top-left .text,
+    .arrow.bottom-right .text {
+      transform: rotate(-45deg) translateX(-50%);
+      display: inline-block; /* Allows for accurate width calculation */
+      position: relative;
+      left: 50%;
+      top: 40%;
+      width: 150%; /* Adjust as needed for text fit */
+      text-align: center; /* Centers text within the rotated element */
+    }
+
+    .arrow.bottom-left .text,
+    .arrow.top-right .text {
+      transform: rotate(45deg) translateX(-50%);
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      top: 40%;
+      width: 150%; 
+      text-align: center;
+    }
+
+    .arrow.peach {
+      background-color: #f5cba7;
+    }
+
+    .arrow.lavender {
+      background-color: #d7bde2;
+    }
+
+    .arrow.teal {
+      background-color: #a2d9ce;
+    }
+
+    .center {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 2;
+      background-color: #f9e79f;
+      border-radius: 10px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .center h2 {
+      margin-bottom: 0;
+      font-size: 2em;
+    }
+
+    .center .social-media {
+      color: #40407a;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+      }
+
+      .arrow.top-left {
+        grid-column: 1 / span 1;
+      }
+
+      .arrow.top-right {
+        grid-column: 3 / span 1;
+      }
+
+      .center {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+      }
+
+      /* Adjust rotated text positioning for larger screens */
+      .arrow .text {
+        top: 35%; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="arrow peach top-left">
+      <div class="number">01</div>
+      <div class="text">Audience validation</div>
+    </div>
+    <div class="arrow lavender top-right">
+      <div class="number">02</div>
+      <div class="text">Custom audiences for retargeting</div>
+    </div>
+    <div class="center">
+      <h2 class="social-media">Social Media</h2>
+      <h2>Tips</h2>
+    </div>
+    <div class="arrow peach bottom-right">
+      <div class="number">03</div>
+      <div class="text">Try out different content styles</div>
+    </div>
+    <div class="arrow teal bottom-left">
+      <div class="number">04</div>
+      <div class="text">Engage micro-influencers</div>
+    </div>
+    <div class="arrow peach bottom-left">
+      <div class="number">05</div>
+      <div class="text">Post updates regularly</div>
+    </div>
+    <div class="arrow lavender top-right">
+      <div class="number">06</div>
+      <div class="text">Avoid hard selling</div>
+    </div>
+  </div>
+</body>
+</html>
