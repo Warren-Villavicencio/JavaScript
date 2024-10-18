@@ -1,11 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-section, .right-section {
+  width: 100%;
+  padding: 20px;
+}
+
+.left-section {
+  background-color: #181818;
+  color: white;
+}
+
+.right-section {
+  background-color: white;
+}
+
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+.name-banner {
+  background-color: #0E4887;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #929292;
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+.rounded-rectangle {
+  background-color: #0E4887;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.experience .rounded-rectangle,
+.education .rounded-rectangle {
+  color: black;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+.skills-summary li {
+  margin-bottom: 10px;
+}
+
+.skills-summary .bar {
+  width: 0;
+  height: 10px;
+  background-color: #0E4887;
+  margin-top: 5px;
+}
+
+.skills-summary .design-process .bar {
+  width: 78%;
+}
+
+.skills-summary .project-management .bar {
+  width: 81%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .left-section, .right-section {
+    width: 50%;
+  }
+}
+</style>
 </head>
 <body>
-    
+
+<div class="container">
+  <div class="left-section">
+    <img src="headshot.jpg" alt="Headshot" class="headshot">
+
+    <div class="rounded-rectangle" style="background-color: #363636;">
+      <h3>About Me</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue dui.</p>
+      <p><i class="fas fa-phone"></i> +123-456-7890</p>
+      <p><i class="fas fa-envelope"></i> hello@reallygreatsite.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Anywhere St. Any City</p>
+    </div>
+
+    <div class="rounded-rectangle">
+      <h3>Language</h3>
+      <ul>
+        <li>English</li>
+        <li>Germany (basic)</li>
+        <li>Spain (basic)</li>
+      </ul>
+    </div>
+
+    <div class="rounded-rectangle">
+      <h3>Expertise</h3>
+      <ul>
+        <li>Management Skills</li>
+        <li>Creativity</li>
+        <li>Digital Marketing</li>
+        <li>Negotiation</li>
+        <li>Critical Thinking</li>
+        <li>Leadership</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="name-banner">
+      <h1>RICHARD SANCHEZ</h1>
+      <h2>Product Designer</h2>
+    </div>
+
+    <div class="experience">
+      <div class="rounded-rectangle">
+        <h3>Experience</h3>
+        <h4>Arrowval Industries<br>Sydney - Australia<br>2020 - 2022</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue.</p>
+        <h4>Waridere Inc.<br>Sydney - Australia<br>2016 - 2020</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue.</p>
+        <h4>Studio Showde<br>Sydney - Australia<br>2010 - 2015</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet quam rhoncus, egestas dui eget, malesuada justo. Ut aliquam augue.</p>
+      </div>
+    </div>
+
+    <div class="education">
+      <div class="rounded-rectangle">
+        <h3>Education</h3>
+        <h4>Borcelle University<br>Bachelor of Business Management<br>2014 - 2023</h4>
+        <h4>Borcelle University<br>Master of Business Management<br>2014 - 2018</h4>
+      </div>
+    </div>
+
+    <div class="skills-summary">
+      <div class="rounded-rectangle">
+        <h3>Skills Summary</h3>
+        <ul>
+          <li class="design-process">
+            Design Process
+            <div class="bar"></div>
+            <span>78 %</span>
+          </li>
+          <li class="project-management">
+            Project Management
+            <div class="bar"></div>
+            <span>81 %</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
