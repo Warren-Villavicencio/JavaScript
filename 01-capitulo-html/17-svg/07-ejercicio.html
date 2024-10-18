@@ -34,7 +34,33 @@
           </svg>
     </div>
     <div>
-        
+        <svg width="400" height="200" id="collisionsvg" xmlns="http://www.w3.org/2000/svg">
+            <rect id="rect1" x="10" y="10" width="50" height="50" fill="blue" />
+            <rect id="rect2" x="100" y="10" width="50" height="50" fill="green" />
+            <script type="text/javascript">
+              var rect1 = document.getElementById('rect1');
+              var rect2 = document.getElementById('rect2');
+              
+              function detectCollision() {
+                var rect1X = rect1.getAttribute('x');
+                var rect1Y = rect1.getAttribute('y');
+                var rect2X = rect2.getAttribute('x');
+                var rect2Y = rect2.getAttribute('y');
+                
+                if (Math.abs(rect1X - rect2X) < 50 && Math.abs(rect1Y - rect2Y) < 50) {
+                  console.log('Collision detected!');
+                  rect1.setAttribute('fill', 'red');
+                  rect2.setAttribute('fill', 'red');
+                }
+              }
+              
+              document.addEventListener('mousemove', function(event) {
+                rect1.setAttribute('x', event.clientX - 25);
+                rect1.setAttribute('y', event.clientY - 25);
+                detectCollision();
+              });
+            </script>
+          </svg>
     </div>
     <div>
         
