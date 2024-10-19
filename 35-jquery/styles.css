@@ -62,7 +62,7 @@ li {
     border: #28a745;
     width: auto;
     font-style: normal;
-    box-shadow: #218838;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    
 
 }
