@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Completo</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="miFormulario">
+        <input type="text" class="campo" placeholder="Nombre" required>
+        <input type="email" class="campo" placeholder="Correo" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensaje"></div>
+
+    <script>
+        document.getElementById('miFormulario').onsubmit = function(event) {
+            event.preventDefault();
+            var campos = document.getElementsByClassName('campo');
+            var mensaje = document.getElementById('mensaje');
+            mensaje.innerHTML = '';
+
+            for (var i = 0; i < campos.length; i++) {
+                if (campos[i].value === '') {
+                    mensaje.innerHTML += '<p class="error">El campo ' + (i + 1) + ' es obligatorio.</p>';
+                }
+            }
+        };
+    </script>
+</body>
+</html>
