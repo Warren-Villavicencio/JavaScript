@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enciclopedia Avanzada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Enciclopedia Avanzada</h1>
+        <input type="text" id="searchInput" placeholder="Buscar...">
+        <button id="searchButton">Buscar</button>
+    </header>
+    <main id="resultsContainer"></main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- Descripción:
+
+addEventListener: Escucha el clic en el botón de búsqueda y llama a la función fetchWikipediaData.
+fetchWikipediaData: Realiza una solicitud a la API de Wikipedia y maneja la respuesta.
+displayResults: Muestra los resultados en el contenedor principal, creando elementos dinámicamente.
+Principios SOLID
+S: Single Responsibility Principle - Cada función tiene una única responsabilidad (por ejemplo, fetchWikipediaData solo se encarga de obtener datos).
+O: Open/Closed Principle - El código está diseñado para ser extendido sin modificar las funciones existentes.
+L: Liskov Substitution Principle - Las funciones pueden ser reemplazadas por otras que cumplan con la misma interfaz.
+I: Interface Segregation Principle - Las funciones son específicas y no obligan a implementar métodos innecesarios.
+D: Dependency Inversion Principle - La lógica de la aplicación no depende de implementaciones concretas, sino de abstracciones (en este caso, la API de Wikipedia). -->
