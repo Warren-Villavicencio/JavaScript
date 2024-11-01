@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico</title>
+    <style>
+        .mi-clase {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="mi-clase">Elemento 1</div>
+    <div class="mi-clase">Elemento 2</div>
+    <div class="mi-clase">Elemento 3</div>
+    <button onclick="cambiarColor()">Cambiar Color</button>
+
+    <script>
+        function cambiarColor() {
+            var elementos = document.getElementsByClassName('mi-clase');
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
