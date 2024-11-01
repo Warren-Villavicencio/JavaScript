@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Intermedio</title>
+    <style>
+        .activo {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="texto">Texto 1</p>
+    <p class="texto">Texto 2</p>
+    <button id="cambiarColor">Cambiar Color</button>
+    <script>
+        const textos = document.querySelectorAll('.texto');
+        const boton = document.querySelector('#cambiarColor');
+
+        boton.addEventListener('click', () => {
+            textos.forEach(texto => {
+                texto.classList.toggle('activo');
+            });
+        });
+    </script>
+</body>
+</html>
