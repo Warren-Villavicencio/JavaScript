@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enciclopedia Digital</title>
+    <!-- Estilos CSS con diseño responsivo -->
+    <style>
+        /* Variables CSS para mantener consistencia en colores y espaciados */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f5f6fa;
+            --text-color: #2c3e50;
+            --spacing-unit: 1rem;
+        }
+
+        /* Reseteo básico y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: var(--spacing-unit);
+        }
+
+        /* Contenedor principal con diseño responsivo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+        }
+
+        /* Estilos del encabezado */
+        .header {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* Estilos del formulario de búsqueda */
+        .search-form {
+            display: flex;
+            gap: var(--spacing-unit);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: calc(var(--spacing-unit) / 2);
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-button {
+            padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Contenedor de resultados con grid responsivo */
+        .results-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        @media (min-width: 768px) {
+            .results-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Estilos para las secciones de contenido */
+        .content-section {
+            background: white;
+            padding: var(--spacing-unit);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* Estilos para la galería de imágenes */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-unit);
+        }
+
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Estilos para la sección de videos */
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-unit);
+        }
+
+        .video-item {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-item video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Estilos para mensajes de carga y error */
+        .loading, .error {
+            text-align: center;
+            padding: var(--spacing-unit);
+            background: white;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Enciclopedia Digital</h1>
+            <p>Busca información, imágenes y videos sobre cualquier tema</p>
+        </header>
+
+        <form class="search-form" id="searchForm">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Escribe tu búsqueda..."
+                required
+            >
+            <button type="submit" class="search-button">Buscar</button>
+        </form>
+
+        <div class="results-container">
+            <section class="content-section" id="wikiContent">
+                <h2>Información</h2>
+                <div id="wikiResults"></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Imágenes</h2>
+                <div class="image-gallery" id="imageGallery"></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Videos</h2>
+                <div class="video-gallery" id="videoGallery"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Módulos JavaScript organizados siguiendo principios SOLID -->
+    <script>
+        // Módulo de configuración
+        const Config = {
+            // Constantes y configuraciones de las APIs
+            PIXABAY_API_KEY: '46850860-9982aae93ec93ab915561d6b1',
+            PIXABAY_API_URL: 'https://pixabay.com/api/',
+            PIXABAY_VIDEO_API_URL: 'https://pixabay.com/api/videos/',
+            WIKIPEDIA_API_URL: 'https://es.wikipedia.org/w/api.php',
+        };
+
+        // Interface para servicios de API (Principio de Segregación de Interfaces)
+        class APIService {
+            async fetch(url, params) {
+                try {
+                    const response = await fetch(url + '?' + new URLSearchParams(params));
+                    if (!response.ok) throw new Error('Error en la petición');
+                    return await response.json();
+                } catch (error) {
+                    throw new Error(`Error en la petición: ${error.message}`);
+                }
+            }
+        }
+
+        // Clase para manejar peticiones a Wikipedia (Principio de Responsabilidad Única)
+        class WikipediaService extends APIService {
+            async search(query) {
+                const params = {
+                    action: 'query',
+                    format: 'json',
+                    origin: '*',
+                    list: 'search',
+                    srsearch: query,
+                    utf8: 1,
+                    srlimit: 1
+                };
+
+                const data = await this.fetch(Config.WIKIPEDIA_API_URL, params);
+                return data.query.search[0];
+            }
+
+            async getContent(pageId) {
+                const params = {
+                    action: 'query',
+                    format: 'json',
+                    origin: '*',
+                    pageids: pageId,
+                    prop: 'extracts',
+                    explaintext: true,
+                    exintro: true
+                };
+
+                const data = await this.fetch(Config.WIKIPEDIA_API_URL, params);
+                return data.query.pages[pageId].extract;
+            }
+        }
+
+        // Clase para manejar peticiones a Pixabay (Principio de Responsabilidad Única)
+        class PixabayService extends APIService {
+            async searchImages(query) {
+                const params = {
+                    key: Config.PIXABAY_API_KEY,
+                    q: query,
+                    per_page: 6,
+                    lang: 'es'
+                };
+
+                const data = await this.fetch(Config.PIXABAY_API_URL, params);
+                return data.hits;
+            }
+
+            async searchVideos(query) {
+                const params = {
+                    key: Config.PIXABAY_API_KEY,
+                    q: query,
+                    per_page: 4,
+                    lang: 'es'
+                };
+
+                const data = await this.fetch(Config.PIXABAY_VIDEO_API_URL, params);
+                return data.hits;
+            }
+        }
+
+        // Clase para manejar la interfaz de usuario (Principio de Responsabilidad Única)
+        class UIManager {
+            constructor() {
+                this.wikiResults = document.getElementById('wikiResults');
+                this.imageGallery = document.getElementById('imageGallery');
+                this.videoGallery = document.getElementById('videoGallery');
+            }
+
+            showLoading(element) {
+                element.innerHTML = '<div class="loading">Cargando...</div>';
+            }
+
+            showError(element, message) {
+                element.innerHTML = `<div class="error">${message}</div>`;
+            }
+
+            displayWikiContent(content) {
+                this.wikiResults.innerHTML = `<p>${content}</p>`;
+            }
+
+            displayImages(images) {
+                this.imageGallery.innerHTML = images.map(image => `
+                    <div class="image-item">
+                        <img src="${image.webformatURL}" alt="${image.tags}">
+                    </div>
+                `).join('');
+            }
+
+            displayVideos(videos) {
+                this.videoGallery.innerHTML = videos.map(video => `
+                    <div class="video-item">
+                        <video controls>
+                            <source src="${video.videos.medium.url}" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Clase principal de la aplicación (Principio de Inversión de Dependencias)
+        class EncyclopediaApp {
+            constructor(wikiService, pixabayService, uiManager) {
+                this.wikiService = wikiService;
+                this.pixabayService = pixabayService;
+                this.ui = uiManager;
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                document.getElementById('searchForm').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const query = document.getElementById('searchInput').value.trim();
+                    if (query) {
+                        await this.performSearch(query);
+                    }
+                });
+            }
+
+            async performSearch(query) {
+                // Mostrar estado de carga
+                this.ui.showLoading(this.ui.wikiResults);
+                this.ui.showLoading(this.ui.imageGallery);
+                this.ui.showLoading(this.ui.videoGallery);
+
+                try {
+                    // Realizar búsquedas en paralelo
+                    const [wikiResult, images, videos] = await Promise.all([
+                        this.searchWikipedia(query),
+                        this.pixabayService.searchImages(query),
+                        this.pixabayService.searchVideos(query)
+                    ]);
+
+                    // Actualizar la interfaz con los resultados
+                    this.ui.displayWikiContent(wikiResult);
+                    this.ui.displayImages(images);
+                    this.ui.displayVideos(videos);
+                } catch (error) {
+                    console.error('Error en la búsqueda:', error);
+                    this.ui.showError(this.ui.wikiResults, 'Error al cargar la información');
+                }
+            }
+
+            async searchWikipedia(query) {
+                const searchResult = await this.wikiService.search(query);
+                return await this.wikiService.getContent(searchResult.pageid);
+            }
+        }
+
+        // Inicialización de la aplicación
+        document.addEventListener('DOMContentLoaded', () => {
+            const app = new EncyclopediaApp(
+                new WikipediaService(),
+                new PixabayService(),
+                new UIManager()
+            );
+        });
+    </script>
+</body>
+</html>
