@@ -178,4 +178,4 @@
                 new UIManager()
             );
         });
-    </script>
+   
