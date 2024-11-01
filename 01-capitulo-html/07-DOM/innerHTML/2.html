@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Intermedio de innerHTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #miLista {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo Intermedio de innerHTML</h1>
+    <div id="miLista"></div>
+    <button onclick="agregarElemento()">Agregar Elemento</button>
+
+    <script>
+        let contador = 1;
+        function agregarElemento() {
+            document.getElementById("miLista").innerHTML += `<p>Elemento ${contador}</p>`;
+            contador++;
+        }
+    </script>
+</body>
+</html>
