@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Básico de appendChild</title>
+</head>
+<body>
+    <h1>Ejemplo Básico de appendChild</h1>
+    <button id="addParagraph">Agregar Párrafo</button>
+    <script>
+        document.getElementById('addParagraph').addEventListener('click', function() {
+            let p = document.createElement('p');
+            p.textContent = 'Este es un nuevo párrafo agregado al DOM.';
+            document.body.appendChild(p);
+        });
+    </script>
+</body>
+</html>
