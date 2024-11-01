@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Entrada</title>
+</head>
+<body>
+    <input type="text" id="miInput" placeholder="Escribe algo...">
+    <button onclick="validarInput()">Enviar</button>
+
+    <script>
+        function validarInput() {
+            var input = document.getElementById("miInput").value;
+            if (input === "") {
+                alert("El campo no puede estar vacío.");
+            } else {
+                alert("¡Gracias por tu entrada!");
+            }
+        }
+    </script>
+</body>
+</html>
