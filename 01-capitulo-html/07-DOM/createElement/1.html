@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de createElement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de createElement en JavaScript</h1>
+
+    <h2>Ejemplo Básico</h2>
+    <script>
+        let div = document.createElement('div');
+        div.innerText = 'Hola, soy un div creado con JavaScript!';
+        document.body.appendChild(div);
+    </script>
+
+    <h2>Ejemplo Intermedio</h2>
+    <script>
+        let button = document.createElement('button');
+        button.innerText = 'Haz clic aquí';
+        document.body.appendChild(button);
+
+        let messageDiv = document.createElement('div');
+        document.body.appendChild(messageDiv);
+
+        button.addEventListener('click', function() {
+            messageDiv.innerText = '¡Botón clicado!';
+        });
+    </script>
+
+    <h2>Ejemplo Avanzado</h2>
+    <script>
+        let ul = document.createElement('ul');
+        document.body.appendChild(ul);
+
+        for (let i = 1; i <= 5; i++) {
+            let li = document.createElement('li');
+            li.innerText = 'Elemento ' + i;
+            li.style.color = 'blue';
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>
