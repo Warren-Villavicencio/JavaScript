@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Avanzado de appendChild</title>
+    <style>
+        .input-field {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo Avanzado de appendChild</h1>
+    <button id="addField">Agregar Campo de Entrada</button>
+    <form id="dynamicForm"></form>
+    <script>
+        document.getElementById('addField').addEventListener('click', function() {
+            let input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Nuevo campo de entrada';
+            input.className = 'input-field';
+            document.getElementById('dynamicForm').appendChild(input);
+        });
+    </script>
+</body>
+</html>
