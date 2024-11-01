@@ -1,4 +1,4 @@
-<script>
+
         // Módulo de configuración
         const Config = {
             // Constantes y configuraciones de las APIs
