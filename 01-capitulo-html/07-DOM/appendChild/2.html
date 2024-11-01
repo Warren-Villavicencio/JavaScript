@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Intermedio de appendChild</title>
+    <style>
+        .nuevo-elemento {
+            color: blue;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo Intermedio de appendChild</h1>
+    <button id="addItems">Agregar Elementos</button>
+    <div id="container"></div>
+    <script>
+        document.getElementById('addItems').addEventListener('click', function() {
+            for (let i = 1; i <= 3; i++) {
+                let div = document.createElement('div');
+                div.className = 'nuevo-elemento';
+                div.textContent = 'Elemento ' + i;
+                document.getElementById('container').appendChild(div);
+            }
+        });
+    </script>
+</body>
+</html>
